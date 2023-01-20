@@ -534,57 +534,27 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-java">git</
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><span class="red">Compilador</span></th>
-<th class="tableblock halign-left valign-top"><span class="green">Interprete</span></th>
+<th class="tableblock halign-left valign-top" colspan="2"><span class="red">Lenguajes Compilados</span></th>
+<th class="tableblock halign-left valign-top" colspan="2"><span class="green">Lenguajes Interpretados</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/compilador.svg" alt="compilador"></span></p>
-</div>
-<div class="imageblock">
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="imageblock">
 <div class="content">
 <img src="images/compilador.svg" alt="compilador" width="602" height="265">
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/interprete.svg" alt="interprete"></span></p>
-</div>
-<div class="paragraph">
-<p>node machine as "machine X" {</p>
-</div>
-<div class="paragraph">
-<p>component interprete as "interprete XA"
-file in as "prog.ext" <a href="#code">[code]</a></p>
-</div>
-<div class="paragraph">
-<p>interprete -down&#8594; in</p>
-</div>
-<div class="paragraph">
-<p>}</p>
-</div>
-<div class="paragraph">
-<p>node machine2 as "machine Y" {</p>
-</div>
-<div class="paragraph">
-<p>component interprete2 as "interprete YA"
-file in2 as "prog.ext" <a href="#code">[code]</a></p>
-</div>
-<div class="paragraph">
-<p>interprete2 -down&#8594; in2</p>
-</div>
-<div class="paragraph">
-<p>}</p>
-</div>
-<div class="literalblock">
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="imageblock">
 <div class="content">
-<pre></pre>
+<img src="images/interprete.svg" alt="interprete" width="460" height="238">
 </div>
 </div></div></td>
 </tr>
@@ -601,8 +571,8 @@ file in2 as "prog.ext" <a href="#code">[code]</a></p>
 <pre>&gt;compiladorXA prog.ext
 &gt;prog.exe</pre>
 </div>
-</div>
-<div class="ulist">
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>Máquina Y</p>
@@ -626,8 +596,8 @@ ERROR!!!</pre>
 <div class="content">
 <pre>&gt;interpreteXA prog.ext</pre>
 </div>
-</div>
-<div class="ulist">
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>Máquina Y</p>
@@ -640,6 +610,22 @@ ERROR!!!</pre>
 </div>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>soluciones <strong class="red">sin portabilidad</strong> y <strong class="green">rápida ejecución</strong> (sin análisis)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>soluciones <strong class="green">con portabilidad</strong> y <strong class="red">lenta ejecución</strong> (con análisis)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -649,13 +635,13 @@ ERROR!!!</pre>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
+<col style="width: 23.8095%;">
+<col style="width: 42.8571%;">
 <col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-middle" colspan="3"><strong class="blue">Plataforma de Desarrollo</strong></th>
+<th class="tableblock halign-center valign-middle" colspan="3"><strong class="blue">Plataforma de Desarrollo</strong> de <em>Sun MicroSystems</em> y <em>Oracle</em></th>
 </tr>
 </thead>
 <tbody>
@@ -663,9 +649,12 @@ ERROR!!!</pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><span class="blue">El lenguaje de programación Java</span></p>
+<p><a href="http://www.oracle.com/technetwork/java">El lenguaje de programación Java</a></p>
 <div class="ulist">
 <ul>
+<li>
+<p>sencillo</p>
+</li>
 <li>
 <p>fuertemente tipado</p>
 </li>
@@ -673,7 +662,7 @@ ERROR!!!</pre>
 <p>imperativo</p>
 </li>
 <li>
-<p>secuencial/concurrente</p>
+<p>secuencial/ concurrente</p>
 </li>
 <li>
 <p>orientado a objetos con clases</p>
@@ -733,14 +722,52 @@ cualquier sistema operativo</p>
 </colgroup>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/plataforma0.svg" alt="plataforma0"></span></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xxx" data-lang="xxx">&gt;javac prog.java
+&gt;java prog.class</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>compilación <em>Just in Time</em>: compila el bytecode a código nativo en tiempo de ejecución y luego ejecuta, evitando el re-análisis del <em>bytescode</em> cada vez</p>
+</li>
+</ul>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
 <img src="images/plataforma1.png" alt="plataforma1">
 </div>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
 <img src="images/plataforma2.webp" alt="plataforma2">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/JavaFeatures.png" alt="JavaFeatures">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/HistoryOfJava.jpg" alt="HistoryOfJava">
 </div>
 </div></div></td>
 </tr>
@@ -758,14 +785,42 @@ cualquier sistema operativo</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/plataforma0.svg" alt="plataforma0"></span></p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>Java Standard Edition</em></strong> (<em>Java SE</em>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>versión usada en ordenadores personales</p>
+</li>
+</ul>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-xxx" data-lang="xxx">&gt;javac prog.java
-&gt;java prog.class</code></pre>
+</li>
+<li>
+<p><strong><em>Java Enterprise Edition</em></strong> (<em>Java EE</em>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Define un conjunto de librerías para el desarrollo de aplicaciones web</p>
+</li>
+<li>
+<p>Necesita Java SE para ejecutarse</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p><strong><em>Java Micro Edition</em></strong> (<em>Java ME</em>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Entorno para desarrollar aplicaciones en dispositivos con recursos limitados como dispositivos móviles, software empotrado en electrodomésticos, etc</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
@@ -796,7 +851,7 @@ cualquier sistema operativo</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion Imperativa</strong></p>
+<p><strong class="blue">Programación Imperativa</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -821,7 +876,7 @@ cualquier sistema operativo</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion Estructurada</strong></p>
+<p><strong class="blue">Programación Estructurada</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -843,7 +898,7 @@ cualquier sistema operativo</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion basada en Objetos</strong></p>
+<p><strong class="blue">Programación basada en Objetos</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -862,7 +917,7 @@ cualquier sistema operativo</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion Orientada a Objetos</strong></p>
+<p><strong class="blue">Programación Orientada a Objetos</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -881,29 +936,7 @@ cualquier sistema operativo</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion con Excepciones</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>gestión de <strong>fallos, defecto y errores lógicos o excepcionales</strong> frente a las <strong>aserciones</strong></p>
-</li>
-<li>
-<p><strong>sentencia <em>try/catch/finally</em></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>programa con tratamiento de errores excepcionales</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion Modular</strong></p>
+<p><strong class="blue">Programación Modular</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -925,7 +958,29 @@ cualquier sistema operativo</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion Parametrizada</strong></p>
+<p><strong class="blue">Programación con Excepciones</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>gestión de <strong>fallos, defecto y errores lógicos o excepcionales</strong> frente a las <strong>aserciones</strong></p>
+</li>
+<li>
+<p><strong>sentencia <em>try/catch/finally</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>programa con tratamiento de errores excepcionales</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Programación Parametrizada</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -938,6 +993,82 @@ cualquier sistema operativo</p>
 <ul>
 <li>
 <p><em>programa con clases parametrizadas en tipos</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Programación Recursiva</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Listas, Árboles, &#8230;&#8203;</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>programa con clases recursivas</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Programación Funcional</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Funciones <em>lambda</em>, flujos, <em>Optional</em>, &#8230;&#8203;</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>programa con inmutabilidad</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Programación Concurrente</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>Threads</em>, Fibras, <em>CompletableFuture</em>, &#8230;&#8203;</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>programa con varios flujos de ejecución</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Programación Reactiva</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>Reactor</em>, &#8230;&#8203;</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>programa asíncrono no bloqueante con flujos de eventos</em></p>
 </li>
 </ul>
 </div></div></td>
@@ -959,7 +1090,7 @@ cualquier sistema operativo</p>
 <td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Un <strong class="blue">programa</strong> se compone de <strong class="blue">paquetes</strong> que se componen de otros paquetes y <strong class="blue">clases</strong>, bajo el <strong class="red">paradigma de la programación orientada a objetos</strong></p>
+<p>Un <strong class="blue">programa</strong> se compone de <strong class="blue">paquetes</strong> que se componen de otros paquetes y <strong class="blue">clases</strong>, bajo el <strong class="red">paradigma de la programación modular</strong></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1009,6 +1140,9 @@ cualquier sistema operativo</p>
 <li>
 <p><strong class="blue">sentencia iterativa</strong>, para repetir la ejecución de sentencias.</p>
 </li>
+<li>
+<p><strong class="blue">sentencias con excepciones</strong>, para elevar, capturalas y delegarlas.</p>
+</li>
 </ul>
 </div>
 </li>
@@ -1040,8 +1174,8 @@ cualquier sistema operativo</p>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 55%;">
-<col style="width: 45%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -1057,9 +1191,6 @@ cualquier sistema operativo</p>
 <p><strong class="blue">Sintaxis</strong>:</p>
 <div class="ulist">
 <ul>
-<li>
-<p><em>&lt;programa&gt;</em> <strong class="red">::=</strong> <em>&lt;sentencia&gt;</em> <strong class="red">+</strong></p>
-</li>
 <li>
 <p><em>&lt;sentencia&gt;</em> <strong class="red">::=</strong> <em>&lt;sentenciaSalida&gt;</em></p>
 </li>
@@ -1093,7 +1224,7 @@ cualquier sistema operativo</p>
 <p><em>Las ocho primeras líneas y dos últimas se explilcarán en los sucesivos apartados de este documento!!!</em></p>
 </li>
 <li>
-<p><em>Todos los códigos deben ir acompañandos en carpeta "utils" el fichero:</em> <a href="https://github.com/USantaTecla-tech-java/src/blob/master/utils/console.java">utils/Console.java</a></p>
+<p><em>Todos los códigos deben ir acompañandos en carpeta "utils" el fichero:</em> <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/utils/Console.java">utils/Console.java</a></p>
 </li>
 </ul>
 </div>
@@ -1131,7 +1262,7 @@ cualquier sistema operativo</p>
 <p><em>&lt;comnetario&gt;</em> <strong class="red">::=</strong> <strong>//</strong> <em>&lt;caracter&gt;</em> <span class="red">*</span> <em>&lt;saltoLinea&gt;</em></p>
 </li>
 <li>
-<p><em>&lt;comnetario&gt;</em> <strong class="red">::=</strong> <strong>/</strong> <strong>* &lt;caracter&gt; </strong>* <strong>/</strong></p>
+<p><em>&lt;comnetario&gt;</em> <strong class="red">::=</strong> <strong>/</strong> <strong>* <em>&lt;caracter&gt;</em> <span class="red"><strong></span> </strong></strong> <strong>/</strong></p>
 </li>
 <li>
 <p>Válidos entre la secuencia de valores, operadores, identificadores, &#8230;&#8203; <span class="red">nunca dentro de éstos!!!</span></p>
@@ -1730,7 +1861,7 @@ cualquier sistema operativo</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tipo-string">Tipo <em>String</em></h4>
+<h4 id="literales-string">Literales <em>String</em></h4>
 <div class="sect4">
 <h5 id="literales-de-tipo-string">Literales de tipo <em>string</em></h5>
 <table class="tableblock frame-all grid-all stretch">
@@ -2019,7 +2150,7 @@ cualquier sistema operativo</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="tipo-string-2">Tipo <em>string</em></h5>
+<h5 id="tipo-string">Tipo <em>string</em></h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 35%;">
@@ -2181,8 +2312,8 @@ cualquier sistema operativo</p>
 <h4 id="entrada-de-datos">Entrada de Datos</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
 <thead>
 <tr>
@@ -2199,7 +2330,7 @@ cualquier sistema operativo</p>
 <div class="ulist">
 <ul>
 <li>
-<p><em>&lt;expresion&gt;</em> <strong class="red">::=</strong> <strong>console.</strong> <strong class="red">(</strong> <strong>readByte</strong> <strong class="red">|</strong> <strong>readShort</strong> <strong class="red">|</strong> <strong>readInt</strong> <strong class="red">|</strong> <strong>readLong</strong> <strong class="red">|</strong> <strong>readFloat</strong> <strong class="red">|</strong> <strong>readDouble</strong> <strong class="red">|</strong> <strong>readChar</strong> <strong class="red">|</strong> <strong>readBoolean</strong> <strong class="red">|</strong> <strong>readString</strong> <strong class="red">)</strong> <strong>(</strong> <strong class="red">[</strong> <em>&lt;String&gt;</em> <strong class="red">]</strong> <strong>)</strong></p>
+<p><em>&lt;expresion&gt;</em> <strong class="red">::=</strong> <strong>console.</strong> <strong>read</strong>[red]<strong>(</strong> <strong>Byte</strong> <strong class="red">|</strong> <strong>Short</strong> <strong class="red">|</strong> <strong>Int</strong> <strong class="red">|</strong> <strong>Long</strong> <strong class="red">|</strong> <strong>Float</strong> <strong class="red">|</strong> <strong>Double</strong> <strong class="red">|</strong> <strong>Char</strong> <strong class="red">|</strong> <strong>Boolean</strong> <strong class="red">|</strong> <strong>String</strong> <strong class="red">)</strong> <strong>(</strong> <strong class="red">[</strong> <em>&lt;String&gt;</em> <strong class="red">]</strong> <strong>)</strong></p>
 </li>
 </ul>
 </div>
@@ -2260,8 +2391,8 @@ cualquier sistema operativo</p>
 <h4 id="sentencia-de-declaración-de-variable">Sentencia de Declaración de Variable</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 55%;">
 <col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
 <thead>
 <tr>
@@ -2809,8 +2940,8 @@ cualquier sistema operativo</p>
 <h4 id="operadores-de-acumulación">Operadores de Acumulación</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 35%;">
+<col style="width: 65%;">
 </colgroup>
 <thead>
 <tr>
@@ -2855,7 +2986,7 @@ cualquier sistema operativo</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in 4-como/1-imperativa/3-operadores/4-acumulador.adoc - include::../../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a1_imperativa/a3_operadores/a4_acumulador/App.java[]</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in 4-como/1-imperativa/3-operadores/4-acumulador.adoc - include::../../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a1_imperativa/a3_operadores/a4_acumulador/App.adoc[]</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -3083,8 +3214,8 @@ cualquier sistema operativo</p>
 <h4 id="precedencia-y-asociatividad">Precedencia y asociatividad</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
 <thead>
 <tr>
@@ -3159,8 +3290,8 @@ cualquier sistema operativo</p>
 <h4 id="operador-paréntesis">Operador Paréntesis</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 </colgroup>
 <thead>
 <tr>
@@ -3578,13 +3709,6 @@ cualquier sistema operativo</p>
 <ul>
 <li>
 <p>Su ejecución (espacio/tiempo) ejecuta secuencialmente las sentencias anidadas</p>
-<div class="ulist">
-<ul>
-<li>
-<p>cuando termina la ejecución de la sentencia, se destruyen todas las posibles variables y constantes creadas internamente</p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div>
@@ -3642,6 +3766,9 @@ cualquier sistema operativo</p>
 </li>
 <li>
 <p><span class="red">Nunca desde fuera hacia dentro!!!</span>, <strong class="green">ocultación de información</strong></p>
+</li>
+<li>
+<p>cuando termina la ejecución de la sentencia, <strong class="red">se destruyen todas las posibles variables y constantes creadas internamente</strong></p>
 </li>
 </ul>
 </div>
@@ -3723,13 +3850,6 @@ cualquier sistema operativo</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-initialsv0">3-initials/v0.0</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v0_0/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v1_0/App.java">v1.0</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
 <p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#0-multiplicationtable">3-numbers/0-multiplicationTable/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_4/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_1/App.java">v0.1</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_2/App.java">v0.2</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_3/App.java">v0.3</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_4/App.java">v0.4</a></p>
 </li>
 </ul>
@@ -3741,8 +3861,6 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -3750,6 +3868,8 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -3764,8 +3884,6 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -3773,6 +3891,8 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -3787,8 +3907,6 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -3796,6 +3914,8 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -3810,8 +3930,6 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -3819,8 +3937,6 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -3829,8 +3945,8 @@ cualquier sistema operativo</p>
 <h3 id="tablas">Tablas</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 29%;">
+<col style="width: 71%;">
 </colgroup>
 <thead>
 <tr>
@@ -4186,7 +4302,31 @@ cualquier sistema operativo</p>
 </div>
 <div class="sect2">
 <h3 id="cadenas-de-caracteres">Cadenas de Caracteres</h3>
-
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-initialsv0">3-initials/v0.0</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v0_0/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v1_0/App.java">v1.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="clases-de-recubrimiento">Clases de Recubrimiento</h3>
@@ -4579,7 +4719,7 @@ cualquier sistema operativo</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-01-16 09:02:40 UTC
+Last updated 2023-01-20 17:09:39 UTC
 </div>
 </div>
 </body>
