@@ -472,7 +472,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#vista-pública-de-las-clases">Vista Pública de las Clases</a></li>
 <li><a href="#vista-pública-de-los-objetos">Vista Pública de los Objetos</a></li>
-<li><a href="#vista-privada-de-las-clases">Vista privada de las Clases</a></li>
+<li><a href="#vista-privada-de-las-clases">Vista Privada de las Clases</a></li>
 <li><a href="#vista-privada-de-los-objetos">Vista Privada de los Objetos</a></li>
 <li><a href="#miembros-de-clase">Miembros de Clase</a></li>
 <li><a href="#cadenas-de-caracteres">Cadenas de Caracteres</a></li>
@@ -4756,8 +4756,8 @@ boolean mismo = edades == años;
 <h4 id="paso-de-mensajes">Paso de mensajes</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -4769,7 +4769,7 @@ boolean mismo = edades == años;
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">&lt;direccion0&gt; . &lt;metodo&gt; ([&lt;expresion&gt;,...)]</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">&lt;expressioin&gt;.&lt;methodName&gt;([&lt;expression&gt;{, &lt;expression&gt;})]</code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -4939,88 +4939,80 @@ intervalos = null;<b class="conum">(1)</b>
 </div>
 </div>
 <div class="sect2">
-<h3 id="vista-privada-de-las-clases">Vista privada de las Clases</h3>
+<h3 id="vista-privada-de-las-clases">Vista Privada de las Clases</h3>
 <div class="sect3">
 <h4 id="definición-de-atributos">Definición de atributos</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En cualquer punto de la implementación de la clase, se <strong class="blue">declaran variables de tipos primitivos, referencias a objetos o vectores</strong> de éstos anteponiendo la palabra <strong>private</strong> o, exepcionalmente para <strong class="blue">constantes</strong> (<em>Se tratarán posteriormente;</em> ), <strong class="red">public</strong>;</p>
 <div class="ulist">
 <ul>
 <li>
-<p>En cualquer punto de la implementación de la clase, se declaran variables de tipos primitivos,referencias a objetos o vectores de éstos anteponiendo la palabra <strong>private</strong> o, exepcionalmente para constantes globales(<em>Se tratarán posteriormente;</em> ), <strong>public</strong>;</p>
+<p>Pero lo lógico es <span class="green">al principio de la declaración de la clase</span></p>
 </li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 30%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
 <li>
-<p><em>A falta de inicialización explícita, se inicializan a valores por defecto, dependiendo de su tipo (0 para tipos numéricos, false para el tipo lógico, y null para referencias);</em></p>
+<p>A <strong class="blue">falta de inicialización explícita</strong>, se inicializan a valores por defecto, dependiendo de su tipo (<span class="blue">0 para tipos numéricos, false para el tipo lógico, y null para referencias</span>);</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class &lt;clase&gt; {
-   private &lt;atributo&gt;
-   private &lt;atributo&gt;
-   ...
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Intervalo {
-   private double minimo;
-   private double maximo;
+<pre class="highlight"><code class="language-java" data-lang="java">class &lt;class&gt; {
+   private &lt;declaration&gt;
+   private &lt;declaration&gt;
    ...
 }</code></pre>
 </div>
 </div></div></td>
 </tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
-</thead>
-<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class Interval {
+   private double min;
+   private double max;
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>En el caso de que los atributos sean constantes,puede postergarse la inicialización al cuerpo de los constructores. Una vez inicializadas, ya no es posible la asignación de nuevos valores.</p>
+<p>En el caso de que los atributos sean <strong class="blue">constantes, puede postergarse la inicialización al cuerpo de los constructores</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una vez <span class="blue">inicializadas, ya no es posible la asignación de nuevos valores</span>.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Persona  {
-  private byte edad;
+<pre class="highlight"><code class="language-java" data-lang="java">class Person  {
+  private byte age;
   private final int DNI;
 
-  public Persona(int dni) {
-    edad = 0;
-    this.DNI = dni;
+  public Person(int dni) {
+    age = 0;
+    DNI = dni;
   }
   ...
 }</code></pre>
@@ -5034,207 +5026,201 @@ intervalos = null;<b class="conum">(1)</b>
 <h4 id="definición-de-metodos">Definición de metodos</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 55%;">
+<col style="width: 45%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>En cualquier punto de la implementación
-de la clase, se define el cuerpo de las cabeceras de los métodos
-acompañándolos de una sentencia secuencial que contiene las
-declaraciones locales y sentencias que se consideren oportunas;</p>
+<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En cualquier punto de la implementación de la clase, <strong class="blue">se define el cuerpo de las cabeceras de los métodos acompañándolos de una sentencia secuencial</strong> que contiene las declaraciones locales y sentencias que se consideren oportunas</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La <strong class="blue">cabecera del método</strong> esta constituido por</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>public</strong></p>
+</li>
+<li>
+<p><strong class="blue">tipo devuelto</strong> (tipo primitivo, referencia, array, &#8230;&#8203;) o <strong class="blue">void</strong>, sin información devuelta, para <strong class="blue">efecto lateral en un cambio de estado del objeto</strong></p>
+</li>
+<li>
+<p>secuencia entre paréntesis de <strong class="blue">parámetros</strong> separados por comas donde cada parámetro contiene <strong class="blue">un tipo y su identificador</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>dentro del cuerpo del método se tiene <strong class="blue">acceso a los atributos, los parámetros del método y a las declaraciones locales</strong> (<em>ley escrita de Demeter</em>) a través de la anidación de las sentencias secuenciales</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">clase &lt;clase&gt; {
-  public &lt;cabeceraMetodo&gt;
-  &lt;sentenciaSecuencial&gt;
-  public &lt;cabeceraMetodo&gt;
-  &lt;sentenciaSecuencial&gt;
+<pre class="highlight"><code class="language-java" data-lang="java">clase &lt;class&gt; {
+  public &lt;methodHeader&gt; &lt;sequentialSentence&gt;
+  public &lt;methodHeader&gt; &lt;sequentialSentence&gt;
   ...
 }</code></pre>
 </div>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>dentro del cuerpo del método se tiene acceso a los atributos, los parámetros del método y a las declaraciones locales (<em>ley escrita de Demeter</em>)</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Intervalo {
-   private double minimo;
-   private double maximo;
+<pre class="highlight"><code class="language-java" data-lang="java">class Interval {
+   private double min;
+   private double max;
 
-   public void desplazar (double cantidad)  {
-     minimo += cantidad;
-     maximo += cantidad;
+   public void shift (double amount) {
+     min += amount;
+     max += amount;
    }
    ...</code></pre>
 </div>
 </div></div></td>
 </tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>si el tipo devuelto no es_ <strong>void</strong>, la sentencia</p>
+<p>si el <strong class="blue">tipo devuelto</strong> no es_ <strong>void</strong>, se determinará el valor devuelto por el método con la siguiente sentencia:</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">return &lt;expresion&gt;;</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">  return &lt;expression&gt;;</code></pre>
 </div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>determina el valor devuelto por el método;</p>
-</li>
-</ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public double longitud() {
-return maximo - minimo;
+<pre class="highlight"><code class="language-java" data-lang="java">public double length() {
+  return max - min;
 }
-public boolean incluye(double punto) {
-  return minimo &lt;= punto &amp;&amp; punto &lt;= maximo;
+
+public boolean includes(double point) {
+  return min &lt;= point &amp;&amp; point &lt;= max;
 }
-public boolean valido() {
-  return minimo &lt;= maximo;
-}
-...</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>dado que los atributos son privados a la clase, se puede acceder a los atributos de un objeto de la clase que se está implementando mediante la notación punto:</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">&lt;direccion0&gt;.&lt;atributo&gt;</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public boolean iguales(Intervalo intervalo) {
-  return minimo == intervalo.minimo &amp;&amp;
-    maximo == intervalo.maximo;
+
+public boolean valid() {
+  return min &lt;= max;
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>this</strong> es una referencia constante que guarda la dirección del objeto que recibe el mensaje correspondiente al método que se está definiendo; por tanto:</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">private final &lt;Clase&gt; this;</code></pre>
 </div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect3">
-<h4 id="usos">Usos</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 65%;">
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Resolución de ambigüedades en la colisión de parámetros o declaraciones locales con el mismo nombre que los atributos;</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public Intervalo(double minimo, double maximo) {
-  this.minimo = minimo;
-  this.maximo = maximo;
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Reutilización de métodos en la codificación de otros métodos;</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public boolean incluye(Intervalo intervalo) {
-  return this.incluye(intervalo.minimo) &amp;&amp;
-    this.incluye(intervalo.maximo);
-}
-public void escalar(double escala) {
- double nuevaLongitud = this.longitud() * escala;
- double puntoMedio = this.puntoMedio();
- minimo = puntoMedio - nuevaLongitud / 2;
- maximo = puntoMedio + nuevaLongitud / 2;
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Reutilización de contructores en la definición de otros constructores mediante la sintaxis:</p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>dado que los atributos son privados a la clase, <strong class="blue">se puede acceder a los atributos de un objeto de la clase que se está implementando mediante la notación punto</strong>:</p>
+</li>
+</ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">this ( [ &lt;expresion&gt;,...] );</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">&lt;expression&gt;.&lt;atributo&gt;</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public boolean equals(Intervalo interval) {
+  return min == interval.min &amp;&amp; max == interval.max;
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>this</strong> es una <strong class="blue">referencia constante que guarda la dirección del objeto que recibe el mensaje correspondiente al método que se está definiendo</strong>, implícitamente existe en todas las clases:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">  private final &lt;class&gt; this;</code></pre>
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Debe ser la primera sentencia del constructor;</p>
+<p>Sirve para <strong class="blue">resolución de ambigüedades en la colisión</strong> de parámetros o declaraciones locales con el mismo nombre que los atributos;</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public Intervalo() {
- this(0, 0);
+<pre class="highlight"><code class="language-java" data-lang="java">public Interval(double min, double max) {
+  this.min = min;
+  this.max = max;
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Sirve para la <strong class="blue">reutilización de métodos</strong> en la codificación de otros métodos;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public boolean includes(Interval interval) {
+  return this.includes(interval.min) &amp;&amp;
+    this.includes(interval.max);
 }
 
-public Intervalo(double maximo) {
-  this(0, maximo);
-}
-
-public Intervalo(Intervalo intervalo) {
-  this(intervalo.minimo, intervalo.maximo);
-}
-...</code></pre>
+public void escale(double escale) {
+  double newLength = this.length() * escale;
+  double middlePoint = this.middlePoint();
+  this.min = middlePoint - newLength / 2;
+  tnis.max = middlePoint + newLength / 2;
+}</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -5242,57 +5228,73 @@ public Intervalo(Intervalo intervalo) {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Reutilización de métodos en la codificación de otros métodos;</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Dado que puede ser conveniente disponer de métodos, que no han sido solicitados, para implementar otros métodos, cabe la posibilidad de definir métodos de ámbito privado que sólo se pueden usar en la implementación de la clase:</p>
+<p>Sirve para la <strong class="blue">reutilización de contructores en la definición de otros constructores</strong>, siendo la primera sentencia del constructor, mediante la sintaxis:</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">  this([ &lt;expression&gt; {, &lt;expression&gt; }]);</code></pre>
+</div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class &lt;clase&gt; {
-   private &lt;cabeceraMetodo&gt;
-   &lt;sentenciaSecuencial&gt;
-   private &lt;cabeceraMetodo&gt;
-   &lt;sentenciaSecuencial&gt;
-   …
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">private Intervalo copia() {
-  return new Intervalo(this);
+<pre class="highlight"><code class="language-java" data-lang="java">  public Interval() {
+    this(0, 0);
 }
 
-public Intervalo desplazado(double cantidad) {
-   Intervalo intervalo = this.copia();
-   intervalo.desplazar(cantidad);
-   return intervalo;
-}
-...</code></pre>
+  public Interval(double max) {
+    this(0, max);
+  }
+
+  public Interval(Interval interval) {
+    this(interval.min, interval.max);
+  }</code></pre>
 </div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Sirve para la <strong class="blue">reutilización de métodos en la codificación de otros métodos</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>dado que puede ser conveniente disponer de métodos, que <strong class="blue">no han sido solicitados, para implementar otros métodos</strong>, cabe la posibilidad de definir métodos de ámbito privado que sólo se pueden usar en la implementación de la clase:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public Intervalo interseccion(Intervalo intervalo){
-  if (this.incluye(intervalo))
-    return intervalo.copia();
-  else if (intervalo.incluye(this))
-    return this.copia();
-  else if (this.incluye(intervalo.minimo))
-    return new Intervalo(intervalo.minimo,
-           this.maximo);
-  else if (this.incluye(intervalo.maximo))
-    return new Intervalo(this.minimo,
-           intervalo.maximo);
-  else
-    return null;
+<pre class="highlight"><code class="language-java" data-lang="java">class &lt;class&gt; {
+   private &lt;methodHeader&gt; &lt;sequentialSentence&gt;
+   private &lt;methodHeader&gt; &lt;sequentialSentence&gt;
+   ...
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">private Interval clone() {
+  return new Interval(this);
+}
+
+public Interval shifted(double amount) {
+   Interval interval = this.clone();
+   interval.shift(amount);
+   return interval;
 }</code></pre>
 </div>
 </div></div></td>
@@ -6165,7 +6167,7 @@ public static float scalb(float, int)
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-01-30 17:27:51 UTC
+Last updated 2023-02-03 17:23:28 UTC
 </div>
 </div>
 </body>
