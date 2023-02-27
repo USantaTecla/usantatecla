@@ -7415,7 +7415,7 @@ class App {
 <p>es una <strong class="blue">relación binaria</strong> entre clases</p>
 </li>
 <li>
-<p>si existe una relación de herencia, <span class="blue">no es necesario que exista una colaboración entre los objetos</span> de sus clases aunque tampoco lo impide</p>
+<p>si existe una relación de herencia, <span class="red">no es necesario que exista una colaboración entre los objetos</span> de sus clases aunque tampoco lo impide</p>
 </li>
 <li>
 <p>por tanto, los <strong class="blue">objetos de las clases de una relación de herencia</strong> son, <strong class="blue">a priori, independientes</strong>.</p>
@@ -7634,13 +7634,15 @@ class Hija extends Padre {
 <h4 id="especialización-por-adición">Especialización por adición</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
+<col style="width: 15%;">
+<col style="width: 40%;">
+<col style="width: 45%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top"><strong class="blue">Atributos</strong></th>
 <th class="tableblock halign-left valign-top"><strong class="blue">Métodos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Constructores</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -7648,18 +7650,50 @@ class Hija extends Padre {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><em>Los atributos añadidos</em> en la clase hija tienen <strong class="blue">las mismas reglas sintácticas y semánticas que en una clase que no sea derivada</strong></p>
+<p>Los <strong class="blue">atributos añadidos en la clase hija</strong> tienen <strong class="blue">las mismas reglas sintácticas y semánticas que en una clase que no sea derivada</strong></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><em>Los métodos añadidos</em> en la clase hija tienen <strong class="blue">las mismas reglas sintácticas y semánticas que en una clase que no sea derivada</strong></p>
+<p>Los <strong class="blue">métodos añadidos en la clase hija</strong> tienen <strong class="blue">las mismas reglas sintácticas y semánticas que en una clase que no sea derivada</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong class="red">excepto que NO tienen acceso a los atributos y métodos privados transmitidos desde la clase padre</strong></p>
+<p><strong class="red">excepto que NO tienen acceso a los atributos y métodos privados transmitidos desde la clase padre</strong>, si no es <strong class="blue">a través de los métodos públicos transmitidos desde la clase padre</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Esto <strong class="green">permite la contención del mantenimiento</strong>, dado que, si se <strong class="green">modifica la implantación de la clase padre, no repercute sobre la implantación de la clase hija y se obtiene un mínimo acoplamiento</strong> entre ambas clases</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">  class &lt;Clase&gt; {
+
+    public &lt;Clase&gt;({ &lt;parametro&gt; }* ){
+      super( { &lt;expresion&gt; }*);
+      ...
+    }
+  }</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mediante <strong class="blue"><em>super</em></strong>, donde debe ser la <span class="blue">primera sentencia de los constructores de la clase derivada y sus argumentos deben coincidir en número y tipo con la lista de parámetros de algún constructor público o protegido de la clase padre</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se <span class="blue">puede omitir para el caso del constructor de la clase padre con una lista vacía de parámetros</span></p>
 </li>
 </ul>
 </div>
@@ -7669,9 +7703,6 @@ class Hija extends Padre {
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect3">
-<h4 id="implicaciones-sobre-los-objetos">Implicaciones sobre los objetos</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 75%;">
@@ -7679,8 +7710,8 @@ class Hija extends Padre {
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Implicaciones sobre los objetos</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
 <tbody>
@@ -7688,383 +7719,94 @@ class Hija extends Padre {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Los <em>objetos de la clase padre</em> <strong>NO</strong> sufren ninguna alteración por la presencia de clases derivadas</p>
+<p>Los <strong class="blue">objetos de la clase padre NO sufren ninguna alteración</strong> por la presencia de clases derivadas</p>
 </li>
 <li>
-<p>Los <em>objetos de la clase hija</em>:</p>
+<p>Los <strong class="blue">objetos de la clase hija</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>tienen todos los atributos transmitidos desde la clase padre junto con los atributos añadidos en la clase hija;</p>
+<p>tienen todos los <strong class="blue">atributos transmitidos desde la clase padre junto con los atributos añadidos en la clase hija</strong>;</p>
 </li>
 <li>
-<p>responden a mensajes que corresponden con los métodos públicos transmitidos desde la clase padre junto con los métodos
-públicos añadidos en la clase derivada;</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Por tanto</strong>: <em>los objetos de la clase hija contienen los atributos privados transmitidos desde la clase padre aunque en la implantación de la clase derivada no se puede acceder a ellos</em></p>
-</li>
-<li>
-<p><strong>Implicación</strong>: <em>contención del mantenimiento, dado que, si se modifica la implantación de la clase padre, no repercute sobre la implantación de la clase hija y se obtiene un mínimo acoplamiento entre ambas clases</em></p>
-</li>
-</ul>
-</div>
+<p>responden a mensajes que corresponden con los <strong class="blue">métodos públicos transmitidos desde la clase padre junto con los métodos públicos añadidos en la clase derivada</strong>;</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Una lista de intervalos contiene nodos; un nodo es un intervalo enlazable a otros nodos;</em></p>
-</div>
-<div class="imageblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/HerenciaExtencion2.svg" alt="HerenciaExtencion2" width="233" height="176">
+<img src="images/HerenciaExtencion2.svg" alt="HerenciaExtencion2" width="209" height="176">
 </div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+<div class="sect4">
+<h5 id="miembros-protegidos">Miembros protegidos</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 26%;">
+<col style="width: 37%;">
+<col style="width: 37%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplo</span></strong></th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Intervalo {
-  private double minimo;
-  private double maximo;
-  public double getMinimo() {
-    return minimo;
-}
-  public double getMaximo() {
-    return maximo;
-}
-  public void asignar(Intervalo intervalo) {
-    this.minimo = intervalo.minimo;
-    this.maximo = intervalo.maximo;
-}
-public boolean iguales(Intervalo intervalo) {
-   return minimo == intervalo.minimo &amp;&amp;
-     maximo == intervalo.maximo;
-}
-
-class Nodo extends Intervalo {
-  private Nodo anterior;
-  private Nodo siguiente;
-  public Nodo(Nodo anterior, Nodo siguiente) {
-    this.setAnterior(anterior);
-    this.setSiguiente(siguiente);
-}
-  public Nodo getAnterior() {
-    return anterior;
-}
-  public Nodo getSiguiente() {
-    return siguiente;
-}
-  public void setAnterior(Nodo anterior) {
-    this.anterior = anterior;
-    if (anterior != null) {
-      anterior.siguiente = this;
-    }
-}
-  public void setSiguiente(Nodo siguiente) {
-    this.siguiente = siguiente;
-    if (siguiente != null) {
-      siguiente.anterior = this;
-  }
-
-}
-  public Intervalo getIntervalo() {
-    return new Intervalo(this.getMinimo(),
-                         this.getMaximo());
-  }
-
-}
-class Lista {
-  private Nodo inicio;
-  private Nodo fin;
-
-  public Lista() {
-    inicio = null;
-    fin = null;
-}
-
-  public boolean vacia() {
-    return inicio == null;
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">  public void insertarInicio(Intervalo intervalo) {
-    inicio = new Nodo(null, inicio);
-    inicio.asignar(intervalo);
-    if (fin == null) {
-      fin = inicio;
- }
-
-}
-  public void insertarFin(Intervalo intervalo) {
-    fin = new Nodo(fin, null);
-    fin.asignar(intervalo);
-    if (inicio == null) {
-      inicio = fin;
-  }
-}
-
-public boolean esta(Intervalo intervalo) {
-  if (this.vacia()) {
-    return false;
-  } else {
-    Nodo recorrido = inicio;
-      while (recorrido.getSiguiente() != null &amp;&amp;
-        !recorrido.getIntervalo().iguales(intervalo)) {
-      recorrido = recorrido.getSiguiente();
-      }
-    return recorrido.getIntervalo().iguales(intervalo);
-  }
-}
-  public Intervalo eliminarInicio() {
-
-Intervalo intervalo = inicio.getIntervalo();
-inicio = inicio.getSiguiente();
-if (inicio == null) {
-  fin = null;
-} else {
-  inicio.setAnterior(null);
-}
-return intervalo;
-
-}
-public Intervalo eliminarFin() {
-  Intervalo intervalo = fin.getIntervalo();
-  fin = fin.getAnterior();
-  if (fin == null) {
-  inicio = null;
- } else {
-   fin.setSiguiente(null);
- }
- return intervalo;
- }
-}</code></pre>
-</div>
+<td class="tableblock halign-center valign-middle" colspan="3"><div class="content"><div class="paragraph">
+<p><strong class="red">Cuando la clase padre no transmite los métodos públicos necesarios para manipular los atributos privados transmitidos desde la clase padre en los métodos añadidos en la clase hija</strong></p>
 </div></div></td>
 </tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Visibilidad publica</strong> añadiendo dichos métodos públicos a la clase padre <strong class="red">NO es solución</strong> puesto que <strong class="red">rompe el principio de encapsulación</strong> ya que, <span class="red">para la implantación de una clase hija, los objetos de la clase padre dan a conocer más allá de lo que se les solicitaba previamente a la existencia de la clase derivada</span>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Visibilidad protegida (<em>protected</em>)</strong>, donde los miembros (atributos y/o métodos) son <strong class="blue">accesibles en la implantación de la clase y en cualquier clase derivada</strong>.</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>Problema:</strong> <em>la clase padre no transmite los métodos públicos necesarios para manipular los atributos privados transmitidos desde la clase padre en los métodos añadidos en la clase hija</em></p>
+<p><strong class="blue">Atributos protegidos</strong> Dentro del cuerpo de los <span class="blue">métodos de la clase derivada se tiene acceso a los atributos protegidos heredados, a los atributos añadidos, a los parámetros del método y a las declaraciones locales</span>, <strong class="blue">ley flexible de Demeter</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong><em>Visibilidad public</em></strong> Añadir dichos métodos públicos a la clase padre <strong>NO</strong> es solución puesto que rompe el principio de encapsulación ya que, para la implantación de una clase hija, los objetos de la clase padre dan a conocer más allá de lo que se les solicitaba previamente a la existencia de la clase derivada.</p>
+<p>Implicación: <span class="red">desbordamiento del mantenimiento dado que si se modifica la implantación de la clase padre SI repercute sobre la implantación de la clase hija</span> y se obtiene un <strong class="red">máximo acoplamiento</strong> entre ambas clases</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p><strong>Visibilidad protected</strong> Los miembros (atributos y/o métodos) son accesibles en la implantación de la clase y en cualquier clase
-derivada.</p>
-</li>
-<li>
-<p><strong>Atributos protected</strong> Dentro del cuerpo de los métodos de la clase derivada se tiene acceso a los atributos heredados, a los atributos añadidos, a los parámetros del método y a las declaraciones locales (ley flexible de Demeter)</p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><em>No existen o son privados los métodos “getMinimo” y “getMaximo” de la clase Intervalo</em></p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Métodos <em>get/set</em> protegidos</strong> son métodos <span class="green">para obtener el valor y asignar un valor a los atributos privados transmitidos desde la clase padre</span>, <strong class="green">posibilitando cualquier manipulación por parte de la clase hija futura</strong>;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implicación: <span class="green">contención del mantenimiento dado que si se modifica la implantación de la clase padre no repercute sobre la implantación de la clase hija</span> y se obtiene un <strong class="green">mínimo acoplamiento</strong> entre ambas clases</p>
+</li>
+</ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ErrorClassIntervalo.jpg" alt="height32">
-</div>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>Implicación</em>:</strong> <em>desbordamiento del mantenimiento dado que si se modifica la implantación de la clase padre <strong>SI</strong> repercute sobre la implantación de la clase hija y se obtiene un <strong>máximo acoplamiento</strong> entre ambas clases</em></p>
-</li>
-</ul>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplos</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Intervalo {
-  protected double minimo;
-  protected double maximo;
-  public Intervalo(double minimo, double maximo) {
-    this.minimo = minimo;
-    this.maximo = maximo;
-  }
-  …
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Nodo extends Intervalo {
-  …
-  public Intervalo getIntervalo() {
-    return new Intervalo(minimo, maximo);
-  }
-  …
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Intervalo {
-  protected double puntoMedio;
-  protected double longitud;
-  public Intervalo(double minimo, double maximo) {
-    puntoMedio = (minimo + maximo) / 2;
-    longitud = maximo - minimo;
-  }
-  …
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Nodo extends Intervalo {
-  …
-  public Intervalo getIntervalo() {
-    return new Intervalo(puntoMedio – longitud / 2,
-      puntoMedio + longitud / 2);
-  }
-  …
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Métodos get/set protected:</strong> son métodos para obtener el valor y asignar un valor a los atributos de la clase que posibilitan cualquier manipulación por parte de la clase hija futura;</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>Implicación</em>:</strong> <em>contención del mantenimiento dado que si se modifica la implantación de la clase padre no repercute sobre la implantación de la clase hija y se obtiene un <strong>mínimo acoplamiento</strong> entre ambas clases</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplo</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Intervalo {
-  private double minimo;
-  private double maximo;
-
-  public Intervalo(double minimo, double maximo) {
-    this.minimo = minimo;
-    this.maximo = maximo;
-  }
-  protected double getMinimo() {
-    return minimo;
-  }
-  protected double getMaximo() {
-    return maximo;
-  }
-  …
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Intervalo {
-
-  private double puntoMedio;
-  private double longitud;
-
-  public Intervalo(double minimo, double maximo) {
-    puntoMedio = (minimo + maximo) / 2;
-    longitud = maximo - minimo;
-  }
-  protected double getMinimo() {
-    return puntoMedio – longitud / 2;
-  }
-  protected double getMaximo() {
-    return puntoMedio + longitud / 2;
-  }
-  …
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Nodo extends Intervalo {
-  …
-  public Intervalo getIntervalo() {
-    return new Intervalo(this.getMinimo(), // NO CAMBIA
-                         this.getMaximo());
-  }
-  …
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect3">
 <h4 id="especialización-por-redefinición">Especialización por redefinición</h4>
@@ -8073,332 +7815,71 @@ derivada.</p>
 <col style="width: 70%;">
 <col style="width: 30%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Donde la cabecera del método es exactamente igual<sub>1</sub> a la cabecera del método de la clase padre, excepto su visibilidad, que puede ampliarse. En caso contrario, sería sobrecarga y no redifinición</p>
-</li>
-<li>
-<p>La visibilidad del método en la clase padre no puede ser private.</p>
+<p>Donde la <strong class="blue">cabecera del método es exactamente igual a la cabecera del método no privado de la clase padre, excepto su visibilidad, que puede ampliarse</strong>. <strong class="red">En caso contrario, sería sobrecarga y no redifinición</strong></p>
 </li>
 <li>
 <p>Sus implicaciones son:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>se anula la transmisión del método de la clase padre;</p>
+<p>se <strong class="red">anula la transmisión del método de la clase padre</strong>;</p>
 </li>
 <li>
-<p>los objetos de la clase padre responden al mensaje con el comportamiento dado en la clase padre;</p>
+<p>los <strong class="blue">objetos de la clase padre responden al mensaje con el comportamiento dado en la clase padre</strong>;</p>
 </li>
 <li>
-<p>los objetos de la clase hija responden al mensaje con el comportamiento dado en la clase hija;</p>
+<p>los <strong class="blue">objetos de la clase hija responden al mensaje con el comportamiento dado en la clase hija</strong>;</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><sub>1</sub>en caso contrario, sería sobrecarga y no redefinición</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class &lt;claseDerivada&gt; extends &lt;claseBase&gt; {
-  &lt;metodoRedefinido&gt;
-  …
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplos</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Una lista con centinela <strong>es una</strong> lista que optimiza la busqueda de elementos</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/ListaCentinela.svg" alt="ListaCentinela" width="311" height="176">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class ListaCentinela extends Lista {
-  public boolean esta(Intervalo intervalo) {
-    this.insertarFin(intervalo);
-    Nodo centinela = this.getFin();
-    Nodo recorrido = this.getInicio();
-    while (!recorrido.getIntervalo().iguales(intervalo)) {
-      recorrido = recorrido.getSiguiente();
-    }
-    boolean esta = recorrido != centinela;
-    this.eliminarFin();
-    return esta;
-  }
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Lista {
-  rivate Nodo inicio;
-  private Nodo fin;
-  …
-
-  protected Nodo getInicio() {
-    return inicio;
-  }
-
-  protected Nodo getFin() {
-    return fin;
-  }
-
-  protected void setInicio(Nodo inicio) {
-    this.inicio = inicio;
-  }
-  protected void setFin(Nodo fin) {
-    this.fin = fin;
-  }
-  …
-}</code></pre>
+<img src="images/ListaCentinela.svg" alt="ListaCentinela" width="281" height="176">
 </div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+<div class="sect4">
+<h5 id="referencia-super">Referencia <em>super</em></h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 70%;">
 <col style="width: 30%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>super</strong>, en la implantación de cualquer clase derivada,es una referencia constante que guarda la dirección del objeto que recibe el mensaje correspondiente al método que se está redefiniendo, pero con el comportamiento de la clase padre; por tanto:</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">private final &lt;ClasePadre&gt; super;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
+<p><strong class="blue">super</strong>, en la implantación de cualquier <strong class="blue">clase derivada, es una referencia constante que guarda la dirección del objeto que recibe el mensaje correspondiente al método que se está redefiniendo, pero con el comportamiento de la clase padre</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Uso:</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>reutilización del método de la clase padre, anulado en la transmición, desde la redefiniciñon del método de la clase hija.</p>
+<p>Su utilidad será para la <strong class="red">reutilización del método de la clase padre, anulado en la transmición, desde la redefinición del método de la clase hija</strong></p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplo</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Un conjunto <strong>es una</strong>
-lista que envia elementos repetidos</em></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/Conjunto.svg" alt="Conjunto" width="459" height="176">
-</div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Conjunto extends Lista {
-
-    public void IncertarInicio (Intervalo intervalo) {
-  if (!this.esta (intervalo) ) {
-      super.incertarInicio (intervalo);
-  }
-}
-public void incertarFin (Intervalo intervalo) {
-  if (!this.esta (intervalo) ) {
-      super.incertarFin (intervalo);
-  }
-}
-  public Conjunto union (Conjunto conjunto) {
- Conjunto union = new Conjunto();
- Iterador iterador = this.iterador();
- while (iterador.hasNext() )
-   union.incertarInicio (iterador.next() );
- iterador = conjunto.iterador();
- while (iterador.hasNext() )
-   union.incertarInicio (iterator.next() );
- return union;
-}
-
-public Conjunto interseccion (Conjunto conjunto) }
-  Conjunto interseccion = new Conjunto();
-  Iterador iterador = this.iterador();
-  while (iterador.hasNext() ) {
-    Intervalo intervalo = iterador.next();
-    if (conjunto.esta(intervalo) )
-      interseccion.insertarInicio(intervalo);
-  }
-  return interseccion;
-}</code></pre>
+<img src="images/Conjunto.svg" alt="Conjunto" width="382" height="176">
 </div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="especialización-de-los-constructores">Especialización de los constructores</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Donde debe ser la primera sentencia de los constructores de la clase derivada y sus argumentos deben coincidir en número y tipo con la lista de parámetros de algún constructor público o protegido de la clase padre</p>
-</li>
-<li>
-<p>Se puede omitir para el caso del constructor de la clase padre con una lista vacía de parámetros</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class &lt;claseDerivada&gt; extends &lt;claseBase&gt; {
-    …
-   &lt;visibilidad&gt; &lt;ClaseDerivada&gt; (&lt;parametros&gt;) {
-     super(&lt;argumentos&gt;);
-     …
-    }
-  …
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplo</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Intervalo {
-  private double minimo;
-  private double maximo;
-  public Intervalo (Intervalo intervalo) {
-    this.minimo = intervalo.minimo;
-    this.maximo = intervalo.maximo;
-  }
-  …
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Nodo extends Intervalo {
-  private Nodo anterior;
-  private Nodo siguiente;
-
-  public Nodo(Nodo anterior, Intervalo intervalo,
-              Nodo siguiente) {
-    super(intervalo);
-    this.setAnterior(anterior);
-    this.setSiguiente(siguiente);
-  }
-  …
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Lista {
-  …
-
-  public void insertarInicio(Intervalo intervalo) {
-    inicio = new Nodo(null, intervalo, inicio);
-    if (fin == null) {
-      fin = inicio;
-    }
-  }
-  public void insertarFin(Intervalo intervalo) {
-    fin = new Nodo(fin, intervalo, null);
-    if (inicio == null) {
-      inicio = fin;
-    }
-  }
-  ...
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect3">
 <h4 id="clase-object">Clase <em>Object</em></h4>
@@ -9270,7 +8751,7 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-02-24 06:52:59 UTC
+Last updated 2023-02-27 17:31:06 UTC
 </div>
 </div>
 </body>
