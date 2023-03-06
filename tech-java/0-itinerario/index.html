@@ -4301,45 +4301,6 @@ cualquier sistema operativo</p>
 <div class="sect1">
 <h2 id="programación-basada-a-objetos">Programación Basada a Objetos</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="vista-pública-de-las-clases">Vista Pública de las Clases</h3>
-<div class="sect3">
-<h4 id="nombre-de-la-clase">Nombre de la Clase</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
-<th class="tableblock halign-left valign-top" colspan="2">*<em class="blue">Ejemplo</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class  &lt;NombreClase&gt; {
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Interval {
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Coordinate {
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
@@ -4409,6 +4370,45 @@ cualquier sistema operativo</p>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="vista-pública-de-las-clases">Vista Pública de las Clases</h3>
+<div class="sect3">
+<h4 id="nombre-de-la-clase">Nombre de la Clase</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class  &lt;NombreClase&gt; {
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class Interval {
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class Coordinate {
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="cabecera-de-métodos-de-la-clase">Cabecera de Métodos de la Clase</h4>
@@ -4429,38 +4429,45 @@ cualquier sistema operativo</p>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public &lt;tipo1&gt; &lt;nombreMetodo&gt; ( [&lt;tipo2&gt; &lt;parametro&gt;, ...])</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">public &lt;tipo1&gt; &lt;nombreMetodo&gt; ( {&lt;tipo2&gt; &lt;parametro&gt;, ...}* )</code></pre>
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>el <em>tipo<sub>1</sub></em> indica el tipo del valor devuelto, que puede ser:_</p>
+<p>el <em>tipo<sub>1</sub></em> indica el <strong class="blue">tipo del valor devuelto</strong>, que puede ser:_</p>
 <div class="ulist">
 <ul>
 <li>
-<p><em>void</em>, nada</p>
+<p><strong class="blue"><em>void</em></strong>, nada, dado que el efecto será un cambio de estado en el objeto y/o sistema</p>
 </li>
 <li>
-<p><em>&lt;primitivo/Clase&gt;</em>, un valor de tipo primitivo o una referencia a un objeto de una clase</p>
+<p><em>&lt;primitivo/Clase&gt;</em>, un <span class="blue">valor de tipo primitivo o una referencia a un objeto de una clase</span></p>
 </li>
 <li>
-<p><em>&lt;primitivo/Clase&gt;[]</em>, una referencia a un vector de valores de tipos primitivos o de referencias a objetos</p>
+<p><em>&lt;primitivo/Clase&gt;[]</em>, <span class="blue">una referencia a un vector de valores de tipos primitivos o de referencias a objetos</span></p>
 </li>
 <li>
-<p><em>&lt;primitivo/Clase&gt;[][]</em>, una referencia a una matriz de valores de tipos primitivos o de referencias a objetos</p>
+<p><em>&lt;primitivo/Clase&gt;[][]</em>, <span class="blue">una referencia a una matriz de valores de tipos primitivos o de referencias a objetos</span></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>el nombre del método debe comenzar con minúscula_</p>
+<p>el <strong class="blue">nombre del método</strong> debe comenzar con minúscula_</p>
 </li>
 <li>
 <p>el <em>tipo<sub>2</sub></em> puede ser igual que <em>tipo<sub>1</sub></em> excepto_ <strong class="red"><em>void</em></strong></p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p>todos los parámetros son pasados_ <strong class="blue"><em>por valor</em></strong></p>
+<p>todos los <strong class="blue">parámetros son pasados por valor</strong></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -4952,15 +4959,19 @@ intervalos = null;<b class="conum">(1)</b>
 <h3 id="vista-privada-de-las-clases">Vista Privada de las Clases</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 24%;">
+<col style="width: 22%;">
+<col style="width: 18%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-middle"><strong class="blue">Definición de Atributos</strong></th>
-<th class="tableblock halign-center valign-middle"><strong class="blue">Definición de Métodos</strong></th>
-<th class="tableblock halign-center valign-middle"><strong class="green">Aserciones</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Definición de Atributos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Definición de Constructores</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Definición de Métodos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Referencia <em>this</em></strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Métodos privados</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -4975,14 +4986,58 @@ intervalos = null;<b class="conum">(1)</b>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><span class="blue">operaciones con sentencias secuenciales, alternativos, iterativas, de retorno y/o expresiones (asignación)</span></p>
+<p><span class="blue">inicialización de los atributos de la clase</span></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
+<p><span class="blue">operaciones con sentencias secuenciales, alternativos, iterativas, expresiones (asignación) y/o de retorno</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">para la resolución de colisión de identificadores y reutilización de métodos dentro de la clase</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">para la reutilización de métodos dentro de la clase</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 55%;">
+<col style="width: 45%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="green">Aserciones</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="green">Objetos valor</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><span class="green">verificación del correcto estado del entorno del mensaje, atributos, parámetros, entorno, &#8230;&#8203;</span> para la <strong class="green">seguridad al procesar los datos</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="green">clases cuyos objetos no cambian de estado (conjunto de estados de sus atributos) tras su creación</span></p>
 </li>
 </ul>
 </div></div></td>
@@ -4994,24 +5049,22 @@ intervalos = null;<b class="conum">(1)</b>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 22.2222%;">
+<col style="width: 27.7778%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Se <strong class="blue">declaran variables de tipos primitivos, referencias a objetos o vectores</strong> de éstos</p>
+<p>Se <strong class="blue">declaran variables y/o constantes de tipos primitivos, referencias a objetos o vectores</strong> de éstos</p>
 </li>
 <li>
-<p>anteponiendo la palabra <strong>private</strong> o, exepcionalmente para <strong class="blue">constantes</strong> (<em>Se tratarán posteriormente;</em> ), <strong class="red">public</strong>;</p>
+<p>anteponiendo la palabra <strong class="blue">private</strong></p>
 <div class="ulist">
 <ul>
 <li>
 <p>En <span class="red">cualquer punto de la implementación</span> de la clase pero lo lógico es <span class="green">al principio de la declaración de la clase</span></p>
-</li>
-<li>
-<p>A <strong class="blue">falta de inicialización explícita</strong>, se inicializan a <strong class="blue">valores por defecto</strong>, dependiendo de su tipo (<span class="blue"><em>0</em> para tipos numéricos, <em>false</em> para el tipo <em>boolean</em>, caracter nulo para tipo <em>char</em>  y <em>null</em> para referencias</span>);</p>
 </li>
 </ul>
 </div>
@@ -5027,17 +5080,6 @@ intervalos = null;<b class="conum">(1)</b>
 }</code></pre>
 </div>
 </div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Ejemplos</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">class Interval {
@@ -5047,15 +5089,26 @@ intervalos = null;<b class="conum">(1)</b>
 </div>
 </div></div></td>
 </tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="definición-de-constructores">Definición de constructores</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>En el caso de que los atributos sean <strong class="blue">constantes, puede postergarse la inicialización al cuerpo de todos los constructores obligatoriamente</strong>.</p>
+<p>Reservado para las <strong class="blue">tareas de inicialización de los atributos</strong> del objeto, evitando la creación de objetos incosistentes</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Una vez <span class="blue">inicializadas, ya no es posible la asignación de nuevos valores</span>.</p>
+<p>A <strong class="blue">falta de inicialización explícita</strong>, <strong class="red">no recomendado</strong>, se inicializan a <strong class="blue">valores por defecto</strong>, dependiendo de su tipo (<span class="blue"><em>0</em> para tipos numéricos, <em>false</em> para el tipo <em>boolean</em>, caracter nulo para tipo <em>char</em>  y <em>null</em> para referencias</span>);</p>
 </li>
 </ul>
 </div>
@@ -5064,17 +5117,26 @@ intervalos = null;<b class="conum">(1)</b>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Person  {
-  public final short ADULT = 18;
-  private short age;
-  private final int DNI;
+<pre class="highlight"><code class="language-java" data-lang="java">class Interval
 
-  public Person(int dni) {
-    age = 0;
-    DNI = dni;
+  private double min;
+  private double max;
+
+  public Interval(){
+    min = 0;
+    max = 0;
   }
-  ...
-}</code></pre>
+
+  public Interval(double maximum){
+    min = 0;
+    max = maximum;
+  }
+
+  public Interval(double minimum, double maximum){
+    min = minimum;
+    max = maximum;
+  }
+  ...</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -5090,37 +5152,24 @@ intervalos = null;<b class="conum">(1)</b>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>En cualquier punto de la implementación de la clase, <strong class="blue">se define el cuerpo de las cabeceras de los métodos acompañándolos de una sentencia secuencial</strong> que contiene las declaraciones locales y sentencias que se consideren oportunas</p>
 <div class="ulist">
 <ul>
 <li>
-<p>La <strong class="blue">cabecera del método</strong> esta constituido por</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>public</strong></p>
+<p>dentro del cuerpo del método se tiene <strong class="blue">acceso a los atributos, los parámetros del método y a las declaraciones locales</strong> desde las expresiones de la anidación jerárquica de sentencias</p>
 </li>
 <li>
-<p><strong class="blue">tipo devuelto</strong> (tipo primitivo, referencia, array, &#8230;&#8203;) o <strong class="blue">void</strong>, sin información devuelta, para <strong class="blue">efecto lateral en un cambio de estado del objeto</strong></p>
-</li>
-<li>
-<p>secuencia entre paréntesis de <strong class="blue">parámetros</strong> separados por comas donde cada parámetro contiene <strong class="blue">un tipo y su identificador</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>dentro del cuerpo del método se tiene <strong class="blue">acceso a los atributos, los parámetros del método y a las declaraciones locales</strong> (<em>ley escrita de Demeter</em>) a través de la anidación de las sentencias secuenciales</p>
+<p>la <strong class="blue">notación punto</strong> para el paso de mensajes sirve también para acceder a los atributos de un objeto de la misma clase</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+</div>
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">clase &lt;class&gt; {
   public &lt;methodHeader&gt; &lt;sequentialSentence&gt;
@@ -5129,22 +5178,26 @@ intervalos = null;<b class="conum">(1)</b>
 }</code></pre>
 </div>
 </div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">class Interval {
-   private double min;
-   private double max;
+  private double min;
+  private double max;
 
-   public void shift (double amount) {
-     min += amount;
-     max += amount;
-   }
-   ...</code></pre>
+  public void shift (double amount) {
+    min += amount;
+    max += amount;
+  }
+
+  public Interval(Interval interval){
+    min = interval.min;
+    max = interval.max;
+  }
+
+  public boolean equals(Intervalo interval) {
+    return min == interval.min &amp;&amp; max == interval.max;
+  }
+  ...</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -5187,37 +5240,9 @@ public boolean valid() {
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>dado que los atributos son privados a la clase, <strong class="blue">se puede acceder a los atributos de un objeto de la clase que se está implementando mediante la notación punto</strong>:</p>
-</li>
-</ul>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">&lt;expression&gt;.&lt;atributo&gt;</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public boolean equals(Intervalo interval) {
-  return min == interval.min &amp;&amp; max == interval.max;
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect4">
-<h5 id="referencia-this">Referencia <em>this</em></h5>
+<div class="sect3">
+<h4 id="referencia-this">Referencia <em>this</em></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 70%;">
@@ -5241,6 +5266,13 @@ public boolean valid() {
 <ul>
 <li>
 <p>Sirve para <strong class="blue">resolución de ambigüedades en la colisión</strong> de parámetros o declaraciones locales con el mismo nombre que los atributos;</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Evita la multiplicidad de identificadores innecesarios</strong></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -5261,30 +5293,6 @@ public boolean valid() {
 <col style="width: 65%;">
 </colgroup>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Sirve para la <strong class="blue">reutilización de métodos</strong> en la codificación de otros métodos;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public boolean includes(Interval interval) {
-  return this.includes(interval.min) &amp;&amp;
-    this.includes(interval.max);
-}
-
-public void escale(double escale) {
-  final double newHalfLength = this.length()/2 * escale;
-  final double middlePoint = this.middlePoint();
-  this.min = middlePoint - newHalfLength;
-  tnis.max = middlePoint + newHalfLength;
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -5314,8 +5322,35 @@ public void escale(double escale) {
 </div>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Sirve para la <strong class="blue">reutilización de métodos</strong> en la codificación de otros métodos;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public boolean includes(Interval interval) {
+  return this.includes(interval.min) &amp;&amp;
+    this.includes(interval.max);
+}
+
+public void escale(double escale) {
+  final double newHalfLength = this.length()/2 * escale;
+  final double middlePoint = this.middlePoint();
+  this.min = middlePoint - newHalfLength;
+  tnis.max = middlePoint + newHalfLength;
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
 </tbody>
 </table>
+</div>
+<div class="sect3">
+<h4 id="métodos-privados">Métodos privados</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 60%;">
@@ -5362,7 +5397,54 @@ private Interval clone() {
 </tr>
 </tbody>
 </table>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Fraction - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a1_classes/Fraction.java"><em>Fraction</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a1_classes/App.java"><em>App</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="aserciones">Aserciones</h4>
@@ -5956,17 +6038,124 @@ Exception in thread "main" java.lang.NegativeArraySizeException
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="">interval</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a1_interval/classes/App.java"><em>classes</em></a></p>
+<p>Fraction - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_asserts/Fraction.java"><em>Fraction</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_asserts/App.java"><em>App</em></a></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="">date</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a3_date/classes/App.java"><em>classes</em></a></p>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
 </li>
 </ul>
 </div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="objetos-valor">Objetos Valor</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En el caso de que los atributos sean <strong class="blue">constantes, puede postergarse la inicialización obligatoria al cuerpo de todos los constructores</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una vez <span class="blue">inicializadas, ya no es posible la asignación de nuevos valores</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class Person  {
+  public final short ADULT = 18;
+  private short age;
+  private final int DNI;
+
+  public Person(int dni) {
+    age = 0;
+    DNI = dni;
+  }
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Fraction - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_values/Fraction.java"><em>Fraction</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_values/FractionView.java"><em>FractionView</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_values/App.java"><em>App</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -8538,22 +8727,6 @@ interface &lt;interfazDerivado&gt;
 </ul>
 </div></div></td>
 </tr>
-</tbody>
-</table>
-<div class="sect3">
-<h4 id="limitaciones-en-programación-orientada-a-objetos">Limitaciones en Programación Orientada a Objetos</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo:</span></strong></th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -8637,9 +8810,6 @@ interface &lt;interfazDerivado&gt;
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect3">
-<h4 id="error-1-incompatibilidad-de-tipos">Error 1: <em>Incompatibilidad de tipos</em></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
@@ -8680,9 +8850,6 @@ interface &lt;interfazDerivado&gt;
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect3">
-<h4 id="error-2-instanciación-de-una-clase-abstracta">Error 2: <em>Instanciación de una clase abstracta</em></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8740,7 +8907,6 @@ interface &lt;interfazDerivado&gt;
 </tr>
 </tbody>
 </table>
-</div>
 <div class="sect3">
 <h4 id="formalización">Formalización</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -8851,10 +9017,6 @@ interface &lt;interfazDerivado&gt;
 </div>
 <div class="sect3">
 <h4 id="polimorfismo-vs-sobrecarga">Polimorfismo vs sobrecarga</h4>
-
-</div>
-<div class="sect3">
-<h4 id="formalización-2">Formalización</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -8952,8 +9114,6 @@ b = a.m(a, c);
 </div>
 <div class="sect2">
 <h3 id="converción-de-tipos">Converción de Tipos</h3>
-<div class="sect3">
-<h4 id="conversión-de-direcciones-a-objetos">Conversión de Direcciones a Objetos</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -8976,16 +9136,6 @@ b = a.m(a, c);
 </tr>
 </tbody>
 </table>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Cualquier otra conversión produce error en tiempo de ejecución (conversión de una dirección de un objeto de una clase a otra clase fuera de la rama ascendente o del árbol descendente: tíos, hermanos, clases ajenas a la jerarquía, …)</em></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="conversión-de-tipos-2">Conversión de tipos</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 35%;">
@@ -9091,7 +9241,6 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 </div>
@@ -9203,7 +9352,7 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-03-03 17:14:10 UTC
+Last updated 2023-03-06 17:38:21 UTC
 </div>
 </div>
 </body>
