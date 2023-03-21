@@ -507,6 +507,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#excepciones">Excepciones</a></li>
 <li><a href="#flujos">Flujos</a></li>
 <li><a href="#ficheros">Ficheros</a></li>
+<li><a href="#serialización-de-objetos">Serialización de Objetos</a></li>
 </ul>
 </li>
 <li><a href="#programación-parametrizada">Programación Parametrizada</a></li>
@@ -11218,14 +11219,13 @@ class Derivada extends Base  {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 21%;">
-<col style="width: 27%;">
-<col style="width: 27%;">
+<col style="width: 36.8421%;">
+<col style="width: 31.5789%;">
+<col style="width: 31.579%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="4"><strong class="blue">Flujos de Datos</strong></th>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="blue">Flujos de Datos</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -11233,117 +11233,40 @@ class Derivada extends Base  {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Leer y escribir bytes y caracteres de texto es muy útil, pero a menudo se necesita transmitir datos binarios de los tipos primitivos a través de un flujo;</p>
+<p>Leer y escribir bytes y caracteres de texto es muy útil, pero a menudo se necesita transmitir <strong class="blue">datos binarios de los tipos primitivos a través de un flujo</strong></p>
 </li>
 <li>
-<p>Los interfaces <em>DataInput</em> y <em>DataOutput</em> declaran métodos que permiten leer y escribir datos en formato binario:</p>
+<p>Los <strong class="blue">interfaces <em>DataInput_ y _DataOutput</em></strong> declaran métodos que permiten leer y escribir datos en formato binario</p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">Tipo</span></strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>boolean</p>
-</li>
-<li>
-<p>char</p>
-</li>
-<li>
-<p>short</p>
-</li>
-<li>
-<p>int</p>
-</li>
-<li>
-<p>long</p>
-</li>
-<li>
-<p>float</p>
-</li>
-<li>
-<p>double</p>
-</li>
-<li>
-<p>string</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">interface DataInput {
+  boolean readBoolean();
+  char readChar();
+  short readShort();
+  int readInt();
+  long readLong();
+  float readFloat();
+  double readDouble();
+  String readUTF();
+}</code></pre>
 </div>
-</li>
-</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">Lectura</span></strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>boolean readBoolean()</p>
-</li>
-<li>
-<p>char readChar()</p>
-</li>
-<li>
-<p>short readShort()</p>
-</li>
-<li>
-<p>int readInt()</p>
-</li>
-<li>
-<p>long readLong()</p>
-</li>
-<li>
-<p>float readFloat()</p>
-</li>
-<li>
-<p>double readDouble()</p>
-</li>
-<li>
-<p>String readUTF()</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">interface DataInput {
+  writeBoolean(boolean);
+  writeChar(char);
+  writeShort(short);
+  writeInt(int);
+  writeLong(long);
+  writeFloat(float);
+  writeDouble(double);
+  writeUTF(String);
+}</code></pre>
 </div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">Escritura</span></strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>writeBoolean(boolean)</p>
-</li>
-<li>
-<p>writeChar(char)</p>
-</li>
-<li>
-<p>writeShort(short)</p>
-</li>
-<li>
-<p>writeInt(int)</p>
-</li>
-<li>
-<p>writeLong(long)</p>
-</li>
-<li>
-<p>writeFloat(float)</p>
-</li>
-<li>
-<p>writeDouble(double)</p>
-</li>
-<li>
-<p>writeUTF(String)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -11460,8 +11383,8 @@ public BufferedWriter(Writer out)</code></pre>
 <h3 id="ficheros">Ficheros</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 35%;">
+<col style="width: 65%;">
 </colgroup>
 <thead>
 <tr>
@@ -11474,10 +11397,14 @@ public BufferedWriter(Writer out)</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>los flujos File <em>(FileInputStream, FileOutputStream, FileReader y FileWriter)</em> permiten tratar a un fichero como un flujo de entrada o de salida;</p>
-</li>
+<p>los <strong class="blue">flujos <em>File (FileInputStream, FileOutputStream, FileReader y FileWriter)</em></strong> permiten tratar a un <strong class="blue">fichero como un flujo de entrada o de salida</strong>;</p>
+<div class="ulist">
+<ul>
 <li>
-<p>Para crear un objeto de este tipo de flujos, se usa un constructor que recibe como argumento el nombre del fichero;</p>
+<p>Para crear un objeto, se usa un <strong class="blue">constructor que recibe como argumento el nombre del fichero</strong>;</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -11569,6 +11496,188 @@ FileInputStream inDat = new FileInputStream("entrada.dat");</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in 4-como/6-excepciones/4-ficheros/0-index.adoc - include::../../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a5_excepciones/a4_readBinary/App.java[]</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="serialización-de-objetos">Serialización de Objetos</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 55%;">
+<col style="width: 45%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Serialización de Objetos</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>resuelve el problema de almacenar en un fichero (o transmitir por una línea de comunicación, etc.) un <strong class="red">conjunto de objetos de distintas clases, posiblemente relacionados entre sí, y posteriormente restaurarlos de nuevo en la memoria de un programa</strong>, de forma que se mantengan el mismo número de objetos, los mismos valores de sus atributos y las mismas relaciones entre ese conjunto de objetos que en la situación original</p>
+<div class="ulist">
+<ul>
+<li>
+<p>resolver este problema mediante ficheros de texto o binarios es complejo:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>porque los <strong class="red">objetos tienen un tamaño variable</strong> dependiendo de su clase,</p>
+</li>
+<li>
+<p>porque los <strong class="red">datos de los objetos deberían almacenarse una sola vez</strong> en el fichero,</p>
+</li>
+<li>
+<p>porque <strong class="red">no se pueden almacenar y restaurar las referencias, ya que se corresponden con direcciones de memoria</strong>, y al volver a cargar un objeto, éste ocupará una dirección de memoria diferente de la original;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Persona.svg" alt="Persona" width="375" height="203">
+</div>
+</div>
+<div class="imageblock Profesor">
+<div class="content">
+<img src="images/svg.png" alt="svg" width="440" height="212">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Flujos de Objetos</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>la solución consiste en guardar en el fichero cada objeto con un “número de serie” único;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Java proporciona los flujos de bytes <em>ObjectOutputStream</em> y <em>ObjectInputStream</em> para resolver automáticamente el problema de la serialización de objetos;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>al almacenar un objeto en el fichero:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>se asocia un número de serie a cada referencia,</p>
+</li>
+<li>
+<p>al encontrar por primera vez una referencia, se almacenan los datos del objeto en el fichero y su número de serie,</p>
+</li>
+<li>
+<p>las siguientes veces que se encuentre esa referencia, escribir sólo el número de serie;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>al restaurar un objeto del fichero:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>al restaurar por primera vez un objeto, se crea, se inicializa con sus datos, y se recuerda la asociación entre la nueva referencia y su número de serie,</p>
+</li>
+<li>
+<p>al encontrar sólo su número de serie, recuperar la referencia de ese número de serie;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>para almacenar <strong>(serializar)</strong> los objetos se usa la clase <em>ObjectOutputStream</em>, que implementa el interfaz ObjectOutput que, a su vez, extiende el interfaz <em>DataOutput</em>, con lo que, además de poder escribir cualquier dato en formato binario, añade entre otros los siguientes métodos:</p>
+</li>
+<li>
+<p>que permiten serializar objetos en un flujo de bytes;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>para restaurar <strong>(deserializar)</strong> los objetos se usa la clase <em>ObjectInputStream</em>, que implementa el interfaz <em>ObjectInput</em> que, a
+su vez, extiende el interfaz <em>DataInput</em>, con lo que, además de poder leer cualquier dato en formato binario, añade entre otros los siguientes métodos:</p>
+</li>
+<li>
+<p>que permiten deserializar objetos desde un flujo de bytes;</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public ObjectOutputStream(OutputStream out) throws IOException
+public final void writeObject(Object obj) throws IOException
+public void defaultWriteObject() throws IOException</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public ObjectInputStream(InputStream in) throws IOException
+public final Object readObject() throws IOException, ClassNotFoundException
+public void defaultReadObject() throws IOException, ClassNotFoundException</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>el único requisito que se necesita para poder almacenar y restaurar objetos en los flujos de objetos es que las clases de esos objetos deben implementar el interfaz <em>java.io.Serializable</em>:</p>
+</li>
+<li>
+<p>el interfaz <em>Serializable</em> no tiene ningún método, por lo que, en principio, no hay que modificar nada más en las clases de los objetos a serializar;</p>
+</li>
+<li>
+<p>el mecanismo de serialización por defecto de Java se encarga de almacenar y restaurar automáticamente todos los atributos de los objetos, excepto los atributos <em>static</em>; que nunca se serializan ni se deserializan;</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class Clase implements Serializable { … }</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -11673,7 +11782,7 @@ FileInputStream inDat = new FileInputStream("entrada.dat");</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-03-16 17:18:41 UTC
+Last updated 2023-03-21 09:49:16 UTC
 </div>
 </div>
 </body>
