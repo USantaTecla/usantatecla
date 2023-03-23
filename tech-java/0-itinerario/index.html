@@ -510,7 +510,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#serialización-de-objetos">Serialización de Objetos</a></li>
 </ul>
 </li>
-<li><a href="#programación-parametrizada">Programación Parametrizada</a></li>
+<li><a href="#programación-parametrizada">Programación Parametrizada</a>
+<ul class="sectlevel2">
+<li><a href="#clases-genéricas">Clases Genéricas</a></li>
+<li><a href="#parámetros-limitados">Parámetros Limitados</a></li>
+<li><a href="#parámetros-comodines">Parámetros Comodines</a></li>
+</ul>
+</li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
 <li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
 <li><a href="#ponente">Ponente</a></li>
@@ -11689,7 +11695,764 @@ public void defaultReadObject() throws IOException, ClassNotFoundException</code
 <div class="sect1">
 <h2 id="programación-parametrizada">Programación Parametrizada</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Genericos</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Se desea definir <strong class="green">clases cuyos atributos puedan ser de cualquier clase, y para definir métodos que puedan recibir argumentos y devolver resultados de cualquier clase</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una posible solución sería <strong class="red">declarando los atributos de estas clases y los argumentos de estos métodos con el tipo más débil posible</strong>, por ejemplo, <strong class="blue"><em>Object</em></strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Con esta solución es <strong class="red">necesario convertir la dirección devuelta por el método <em>remove</em>(), que es de la clase <em>Object</em>, a una dirección de la clase concreta mediante el operador de conversión de tipos (<em>cast</em>)</strong>.</p>
+</li>
+<li>
+<p>Al sacar un elemento existe la <strong class="red">posibilidad de que se produzca un error de conversión de tipos en tiempo de ejecución</strong> al sacar los elementos, que no es detectado en tiempo de compilación, si los objetos que <strong class="red">se meten en la pila son de distinta clase de la que se espera que sean al sacarlos</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Estos problemas se pueden resolver mediante la <strong class="green">declaración de una clase parametrizada, que permita declarar la clase de los elementos de la pila como un parámetro de tipo</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A partir de la JDK 1.5 se pueden declarar clases, interfaces y métodos parametrizados, mediante los <strong class="blue"><em>parámetros de tipo</em></strong>, también llamados <em class="blue">variables de tipo</em>.</p>
+</li>
+<li>
+<p>Las clases parametrizadas se denominan <strong class="blue">clases genéricas</strong>; y los métodos parametrizados se denominan <strong class="blue">métodos genéricos</strong>.</p>
+</li>
+<li>
+<p>Tienen las siguientes <strong class="green">ventajas</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>proporcionan una <strong class="green">comprobación estricta de tipos en tiempo de compilación</strong>;</p>
+</li>
+<li>
+<p>su uso <strong class="green">no necesita comprobación de tipos en tiempo de ejecución</strong>;</p>
+</li>
+<li>
+<p>producen código más <strong class="green">robusto</strong> y, en consecuencia, aumentan la facilidad del <strong class="green">mantenimiento de los programas</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 57%;">
+<col style="width: 43%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">- Dispensers : <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a7_modular"><em>fractions</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a8_parametrized/a1_object">objects</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">...
+9: 1
+10: 0
+Exception in thread "main" java.lang.ClassCastException: class es.usantatecla.aX_dispensers.a8_parametrized.a1_object.utils.Fraction cannot be cast to class java.lang.Integer (es.usantatecla.aX_dispensers.a8_parametrized.a1_object.utils.Fraction is in unnamed module of loader 'app'; java.lang.Integer is in module java.base of loader 'bootstrap')
+        at es.usantatecla.aX_dispensers.a8_parametrized.a1_object.App.main(App.java:49)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">  try {
+    BoundedQueue boundedQueue = new BoundedQueue(1);
+    //boundedQueue.add(2);
+    boundedQueue.add(new Fraction(1, 2));
+    int element = (int) boundedQueue.remove();
+    Console.getInstance().writeln(element);
+ } catch (DispenserException e) {
+    e.printStackTrace();
+  }</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="clases-genéricas">Clases Genéricas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Sintaxis</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class &lt;ClaseGenerica&gt;&lt;&lt;ParametroTipo1&gt;, ...,&lt;ParametroTipo2&gt;&gt; {
 
+  private ParametroTipo1 atributo;
+
+  public ParametroTipo1 metodo(ParametroTipo2 parameter) {
+    ...
+  }
+ ...
+}
+...
+private &lt;ClaseGenerica&gt;&lt;&lt;Tipo1/Clasificador1&gt;, ...,&lt;Tipo2/Clasificador2&gt;&gt; objeto
+  = new &lt;ClaseGenerica&gt;&lt;&lt;Tipo1/Clasificador1&gt;, ...,&lt;Tipo2/Clasificador2&gt;&gt;(...)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>donde los <strong class="blue">identificadores encerrados entre &lt; y &gt; son los parámetros de tipo</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">pueden usarse dentro de la clase parametrizada para declarar el tipo de sus atributos, argumentos de sus métodos, o objetos locales de sus métodos</strong>.</p>
+</li>
+<li>
+<p><strong class="blue">se especifican posteriormente con un tipo concreto (actual) en la instanciación de un objeto de la clase parametrizada o al declarar una clase hija de la clase parametrizada</strong>, lo que produce la <strong class="blue">encarnación</strong> de la clase parametrizada, que se convierte en una clase concreta, proceso que se realiza en <strong class="green">tiempo de compilación</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Dispensers : <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a8_parametrized/a1_object"><em>objects</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a8_parametrized/a2_generic">generics</a></p>
+</li>
+<li>
+<p>Map : <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a8_parametrized/a4_map">iterator</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Con esta solución <strong class="blue">NO es necesario convertir la dirección devuelta por el método <em>remove()</em> a una dirección de la clase concreta mediante el operador de conversión de tipos (<em>cast</em>)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Al sacar un elemento <strong class="green">NO existe la posibilidad de que se produzca un error de conversión de tipos en tiempo de ejecución al sacar los elementos, porque el error es detectado en tiempo de compilación, si se trata de meter elementos que no son de la clase adecuada</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">  try {
+    BoundedQueue&lt;Integer&gt; boundedQueue = new BoundedQueue&lt;Integer&gt;(1);
+    boundedQueue.add(2);
+    // boundedQueue.add(new Fraction(1, 2)); No compila!!!
+    int element = boundedQueue.remove();
+    Console.getInstance().writeln(element);
+  } catch (DispenserException e) {
+    e.printStackTrace();
+  }</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 18%;">
+<col style="width: 82%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Por <strong class="red">razones de compatibilidad con códigos anteriores a la JDK 1.5</strong>, está <strong class="green">permitido el uso de las clases parametrizadas sin especificar sus parámetros</strong>, aunque el compilador genera un aviso</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>estas clases se denominan <strong class="blue">tipos crudos</strong> (<em class="blue">raw types</em>):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se <strong class="green">puede asignar una referencia de una clase parametrizada a un tipo crudo, y viceversa</strong>.</p>
+</li>
+<li>
+<p>Una utilidad de los tipos crudos es <strong class="green">poder crear vectores de objetos de clases parametrizadas</strong>, lo cual Java <strong class="red">no permite en la actualidad</strong>;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">  BoundedQueue&lt;Double&gt; b0 = new BoundedQueue&lt;Double&gt;(10);
+  b0.add(0.0);
+  //b0.add(0); // Error!!!
+  //b0.add(new Fraction(0,2)); // Error!!!
+  Console.getInstance().writeln(""+b0.remove());
+
+  BoundedQueue&lt;Double&gt; b1 = new BoundedQueue(10);
+  b1.add(1.1);
+  //b1.add(1); // Error!!!
+  //b1.add(new Fraction(1,2)); // Error!!!
+  Console.getInstance().writeln(""+b1.remove());
+
+  BoundedQueue b2 = new BoundedQueue&lt;Double&gt;(10);
+  b2.add(2.2);
+  //b2.add(2); // Warning!!! y Error!!!
+  //b2.add(new Fraction(2,2)); // Warning!!! y Error!!!
+  Console.getInstance().writeln(""+b2.remove());
+
+  BoundedQueue b3 = new BoundedQueue(10); // Integer!!!
+  //b3.add(3.3); // Warning!!! y Error!!!
+  b3.add(3);
+  //b3.add(new Fraction(3,2)); // Warning!!! y Error!!!
+  Console.getInstance().writeln(""+b3.remove());
+
+  //BoundedQueue&lt;Integer&gt;[] a0 = new BoundedQueue&lt;Integer&gt;[3]; // Error!!!
+  BoundedQueue&lt;Integer&gt;[] a0 = new BoundedQueue[3];
+  for(BoundedQueue&lt;Integer&gt; boundedQueue : a0){
+    boundedQueue = new BoundedQueue&lt;&gt;(5);
+  }</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="clases-genéricas-y-herencia">Clases genéricas y herencia</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 34%;">
+<col style="width: 66%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><span class="blue">Ejemplo</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Una clase genérica puede heredar de otra clase genérica</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class BoundedStack&lt;E&gt; extends BoundedDispenser&lt;E&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Una clase genérica puede heredar de una clase no genérica</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class BoundedStack&lt;E&gt; implements Serializable</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Una clase no genérica puede heredar de una clase genérica</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class IntBoundedStack extends BoundedStack&lt;Integer&gt;
+public final class Integer extends Number implements Comparable&lt;Integer&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="limitaciones-de-las-clases-genéricas">Limitaciones de las clases genéricas</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><span class="blue">Ejemplo</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No se pueden encarnar clases genéricas con tipos primitivos</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">BoundedStack&lt;int&gt; intBoundedStack; // ERROR</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No se pueden crear clases parametrizadas de excepciones</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class XException&lt;E&gt; extends Exception { ... } // ERROR</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No pueden aparecer genéricos en las cláusulas <em>catch</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">try { ... } catch (E e) { ... } // ERROR</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No se pueden crear vectores de objetos de clases genéricas</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class BoundedStack&lt;E&gt; {
+
+   protected E[] elements;
+   ...
+   public BoundedStack(int size) {
+       this.elements = new E[size]; // ERROR
+       this.elements = (E[]) new Object[size]; // AVISO
+   ...
+   }
+}
+
+PilaAcotada&lt;Integer&gt;[] pilas = new PilaAcotada&lt;Integer&gt;[10];        // ERROR
+PilaAcotada&lt;Integer&gt;[] pilas = new PilaAcotada[10];                // AVISO</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="parámetros-limitados">Parámetros Limitados</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 75%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Sintaxis:</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En la declaración de un <strong class="blue">parámetro de tipo de una clase parametrizada se puede especificar una restricción que debe cumplir ese tipo</strong>; estos parámetros de tipo se conocen como <strong class="blue">parámetros de tipo limitados (<em>bounded</em>)</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class &lt;clase&gt;&lt;&lt;parámetro&gt; extends &lt;tipoBase&gt;,…&gt; {
+  ...
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>donde se especifica que el <strong class="blue">parámetro de tipo que se declara &lt;parámetro&gt; debe ser el tipo &lt;tipoBase&gt; o cualquier tipo derivado de él</strong>;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>el <strong class="blue">tipo base puede ser una clase o un interfaz</strong>;</p>
+</li>
+<li>
+<p>se <strong class="blue">pueden especificar más interfaces separándolos por <em>&amp;</em></strong>;</p>
+</li>
+<li>
+<p>el <strong class="blue">tipo base puede estar, a su vez, parametrizado</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>por ejemplo, la clase Interval puede parametrizarse, pero con la restricción de que sus elementos sean <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html">comparables</a>: <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/a5_units/a1_interval/a7_parametrized">bounded</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">interface Comparable&lt;T&gt; {
+   int comparteTo(T o);
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="parámetros-comodines">Parámetros Comodines</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">parámetros de tipos comodines (<em>wildcards</em>) son parámetros sin nombre que pueden usarse para declarar tipos parametrizados de los atributos, argumentos, objetos locales y valores devueltos de métodos de cualquier clase, parametrizada o no</strong>; y que representan únicamente que se trata de un <strong class="blue">tipo cualquiera desconocido</strong>;</p>
+</li>
+<li>
+<p>se representan mediante el [blue[<strong>símbolo <em>?</em></strong></p>
+</li>
+<li>
+<p>al ser <strong class="blue">anónimos no pueden usarse para referirse a él</strong> en el interior de la clase o método donde se declaran;</p>
+</li>
+<li>
+<p><strong class="blue">pueden limitarse como cualquier otro</strong> parámetro de tipo;</p>
+</li>
+<li>
+<p>su principal utilidad consiste en que <strong class="blue">relajan el sistema de tipos de Java de forma que resulta más fácil asignar instancias de tipos genéricos</strong>.</p>
+</li>
+<li>
+<p>Para ilustrar esta propiedad, supóngase el siguiente ejemplo:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El error de compilación se produce porque la clase Lista&lt;_Double_&gt; no es una subclase de Lista&lt;_Number_&gt; aunque <em>Double</em> sea una subclase de <em>Number</em> (¿por qué?).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class Lista&lt;Elemento extends Number&gt; {
+   …
+   public double suma(Lista&lt;Number&gt; lista) {
+       double suma = 0.0;
+       Iterador&lt;Elemento&gt; iterador = this.iterador();
+       while (iterador.hasNext()) {
+           Elemento elemento = iterador.next();
+           suma += elemento.doubleValue();
+       }
+       Iterador&lt;Number&gt; iteradorLista = lista.iterador();
+       while (iteradorLista.hasNext()) {
+           Number numero = iteradorLista.next();
+           suma += numero.doubleValue();
+       }
+       return suma;
+  }
+  …
+public static void main(String[] args) {
+     Integer i1 = new Integer(1);
+     Integer i2 = new Integer(2);
+     Integer i3 = new Integer(3);
+     Lista&lt;Integer&gt; listaEnteros = new Lista&lt;Integer&gt;();
+     listaEnteros.add(i1);
+     listaEnteros.add(i2);
+     listaEnteros.add(i3);
+
+     Double d1 = new Double(1.1);
+     Double d2 = new Double(2.2);
+     Double d3 = new Double(3.3);
+     Lista&lt;Double&gt; listaReales = new Lista&lt;Double&gt;();
+     listaReales.add(d1);
+     listaReales.add(d2);
+     listaReales.add(d3);
+     // ERROR DE COMPILACION
+     double suma = listaEnteros.suma(listaReales);
+     System.out.println("La suma de los elementos de " +
+             listaEnteros + " y " + listaReales + " es " + suma);
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 42.5742%;">
+<col style="width: 57.4258%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La razón es que si fuera así, entonces las siguientes sentencias:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>harían que <strong class="red">pudiéramos copiar una referencia a un entero en una referencia a un doble, lo cual es incorrecto</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Lista&lt;Double&gt; listaReales = new Lista&lt;Double&gt;();
+Lista&lt;Number&gt; listaNumeros = listaReales; // ERROR
+listaNumeros.add(new Integer(1));
+Double doble = listaReales.get(0);</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Para resolver este error de compilación se debe <strong class="green">usar un parámetro de tipo comodín para declarar el tipo del argumento de la función <em>suma</em>()</strong>, como se muestra a continuación:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class Lista&lt;Elemento extends Number&gt; {
+     …
+     public double suma(Lista&lt;? extends Number&gt; lista) {
+         double suma = 0.0;
+         Iterador&lt;Elemento&gt; iterador = this.iterador();
+         while (iterador.hasNext()) {
+              Elemento elemento = iterador.next();
+              suma += elemento.doubleValue();
+     }
+     Iterador&lt;? extends Number&gt; iteradorLista = lista.iterador();
+     while (iteradorLista.hasNext()) {
+         Number numero = iteradorLista.next();
+         suma += numero.doubleValue();
+     }
+     return suma;
+}
+…
+public static void main(String[] args) {
+     Integer i1 = new Integer(1);
+     Integer i2 = new Integer(2);
+     Integer i3 = new Integer(3);
+     Lista&lt;Integer&gt; listaEnteros = new Lista&lt;Integer&gt;();
+     listaEnteros.add(i1);
+     listaEnteros.add(i2);
+     listaEnteros.add(i3);
+
+     Double d1 = new Double(1.1);
+     Double d2 = new Double(2.2);
+     Double d3 = new Double(3.3);
+     Lista&lt;Double&gt; listaReales = new Lista&lt;Double&gt;();
+     listaReales.add(d1);
+     listaReales.add(d2);
+     listaReales.add(d3);
+     double suma = listaEnteros.suma(listaReales); // CORRECTO
+     System.out.println("La suma de los elementos de " +
+             listaEnteros + " y " + listaReales + " es " + suma);
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El error de compilación no se produce porque el uso del parámetro comodín relaja el sistema de tipos, de manera que las siguientes sentencias son correctas:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Lista&lt;Double&gt; listaReales = new Lista&lt;Double&gt;();
+Lista&lt;? extends Number&gt; listaNumeros = listaReales; // CORRECTO</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Sin embargo, usar el parámetro comodín impone que con la referencia no se puedan usar métodos de la clase parametrizada que pudieran producir una incompatibilidad de tipos:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">listaNumeros.add(new Double(3));
+Double x = listaNumeros.get(0); // ERROR</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>pero sí se pueden usar métodos que no puedan producir incompatibilidad de tipos:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Number x = listaNumeros.get(0); // CORRECTO
+String cadena = listaNumeros.toString(); // CORRECTO
+listaNumeros.clear(); // CORRECTO</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="red">Ejemplo:</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class Lista&lt;Elemento extends Number&gt; {
+     …
+     public void addAll(Lista&lt;? extends Elemento&gt; lista) {
+        Iterador&lt;? extends Elemento&gt; iteradorLista = lista.iterador();
+        while (iteradorLista.hasNext()) {
+            Elemento elemento = iteradorLista.next();
+            this.add(elemento);
+     }
+}
+…</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public static void main(String[] args) {
+     …
+     Lista&lt;Number&gt; listaNumeros = new Lista&lt;Number&gt;();
+     listaNumeros.addAll(listaEnteros);
+     listaNumeros.addAll(listaReales);
+     System.out.println("La lista resultado de unir " +
+             listaEnteros + " y " + listaReales + " es " +
+             listaNumeros);
+     …
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">La lista resultado de unir {1; 2; 3} y {1.1; 2.2; 3.3}  es {1; 2; 3; 1.1; 2.2; 3.3}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -11782,7 +12545,7 @@ public void defaultReadObject() throws IOException, ClassNotFoundException</code
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-03-21 09:49:16 UTC
+Last updated 2023-03-23 17:31:31 UTC
 </div>
 </div>
 </body>
