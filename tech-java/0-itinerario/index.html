@@ -515,6 +515,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#clases-genéricas">Clases Genéricas</a></li>
 <li><a href="#parámetros-limitados">Parámetros Limitados</a></li>
 <li><a href="#parámetros-comodines">Parámetros Comodines</a></li>
+<li><a href="#métodos-genéricos">Métodos Genéricos</a></li>
+<li><a href="#colecciones">Colecciones</a></li>
 </ul>
 </li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
@@ -12185,18 +12187,52 @@ PilaAcotada&lt;Integer&gt;[] pilas = new PilaAcotada[10];                // AVIS
 <h3 id="parámetros-comodines">Parámetros Comodines</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 65%;">
+<col style="width: 40%;">
+<col style="width: 60%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Los <strong class="blue">parámetros de tipos comodines (<em>wildcards</em>) son parámetros sin nombre que pueden usarse para declarar tipos parametrizados de los atributos, argumentos, objetos locales y valores devueltos de métodos de cualquier clase, parametrizada o no</strong>; y que representan únicamente que se trata de un <strong class="blue">tipo cualquiera desconocido</strong>;</p>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_listas/a5_parametrized">Código</a> con <span class="red">error de compilación porque la clase <em>List&lt;Double&gt;</em> no es una subclase de <em>List&lt;Number&gt;</em> aunque <em>Double</em> sea una subclase de <em>Number</em></span></p>
 </li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">  List&lt;Double&gt; doubleList = new List&lt;Double&gt;();
+  List&lt;Number&gt; numberList = doubleList; // !!!ERROR
+  numberList.add(Integer.valueOf(3));
+  Double value = doubleList.get(0);</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p>La razón es que si fuera así, entonces las siguientes sentencias, harían que <strong class="red">pudiéramos copiar una referencia a un entero en una referencia a un doble, lo cual es incorrecto</strong></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
-<p>se representan mediante el [blue[<strong>símbolo <em>?</em></strong></p>
+<p>Los <strong class="blue">parámetros de tipos comodines (<em>wildcards</em>) son parámetros sin nombre que pueden usarse para declarar tipos parametrizados de los atributos, argumentos, objetos locales y valores devueltos de métodos de cualquier clase, parametrizada o no</strong>; y que representan únicamente que se trata de un <strong class="blue">tipo cualquiera desconocido</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>se representan mediante el <strong class="blue">símbolo <em>?</em></strong></p>
 </li>
 <li>
 <p>al ser <strong class="blue">anónimos no pueden usarse para referirse a él</strong> en el interior de la clase o método donde se declaran;</p>
@@ -12207,59 +12243,186 @@ PilaAcotada&lt;Integer&gt;[] pilas = new PilaAcotada[10];                // AVIS
 <li>
 <p>su principal utilidad consiste en que <strong class="blue">relajan el sistema de tipos de Java de forma que resulta más fácil asignar instancias de tipos genéricos</strong>.</p>
 </li>
-<li>
-<p>Para ilustrar esta propiedad, supóngase el siguiente ejemplo:</p>
-<div class="ulist">
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>El error de compilación se produce porque la clase Lista&lt;_Double_&gt; no es una subclase de Lista&lt;_Number_&gt; aunque <em>Double</em> sea una subclase de <em>Number</em> (¿por qué?).</p>
+<p>El <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_listas/a5_parametrized2">error de compilación no se produce</a> porque el uso del <strong class="blue">parámetro comodín relaja el sistema de tipos</strong>, de manera que las siguientes sentencias son correctas:</p>
 </li>
-</ul>
-</div>
+<li>
+<p>Sin embargo, usar el parámetro comodín <span class="red">impone que con la referencia no se puedan usar métodos de la clase parametrizada que pudieran producir una incompatibilidad de tipos</span></p>
+</li>
+<li>
+<p>pero sí se <span class="green">pueden usar métodos que no puedan producir incompatibilidad de tipos</span></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class Lista&lt;Elemento extends Number&gt; {
-   …
-   public double suma(Lista&lt;Number&gt; lista) {
-       double suma = 0.0;
-       Iterador&lt;Elemento&gt; iterador = this.iterador();
-       while (iterador.hasNext()) {
-           Elemento elemento = iterador.next();
-           suma += elemento.doubleValue();
-       }
-       Iterador&lt;Number&gt; iteradorLista = lista.iterador();
-       while (iteradorLista.hasNext()) {
-           Number numero = iteradorLista.next();
-           suma += numero.doubleValue();
-       }
-       return suma;
-  }
-  …
-public static void main(String[] args) {
-     Integer i1 = new Integer(1);
-     Integer i2 = new Integer(2);
-     Integer i3 = new Integer(3);
-     Lista&lt;Integer&gt; listaEnteros = new Lista&lt;Integer&gt;();
-     listaEnteros.add(i1);
-     listaEnteros.add(i2);
-     listaEnteros.add(i3);
+<pre class="highlight"><code class="language-java" data-lang="java">  List&lt;Double&gt; doubleList = new List&lt;Double&gt;();
+  // List&lt;Number&gt; numberList = doubleList; // !!!ERROR
+  //numberList.add(Integer.valueOf(3));
+  Double value = doubleList.get(0);
 
-     Double d1 = new Double(1.1);
-     Double d2 = new Double(2.2);
-     Double d3 = new Double(3.3);
-     Lista&lt;Double&gt; listaReales = new Lista&lt;Double&gt;();
-     listaReales.add(d1);
-     listaReales.add(d2);
-     listaReales.add(d3);
-     // ERROR DE COMPILACION
-     double suma = listaEnteros.suma(listaReales);
-     System.out.println("La suma de los elementos de " +
-             listaEnteros + " y " + listaReales + " es " + suma);
-  }
+  // Se podria omitir extends Number
+  List&lt;? extends Number&gt; numberList = doubleList;
+  //numberList.add(new Double(3)); // !!!ERROR
+  //Number numero = new Double(3);
+  //numberList.add(numero); // !!!ERROR
+  //Double x1 = numberList.get(0); // !!!ERROR
+
+  Number number = numberList.get(0);
+  String string = numberList.toString();
+  numberList.clear();
+  string = numberList.toString();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="métodos-genéricos">Métodos Genéricos</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los métodos también se pueden parametrizar, tanto si están en una clase parametrizada como si no lo están.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Para parametrizar un método se declaran los parámetros de tipo antes de la declaración del tipo del valor devuelto por el método.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">&lt;acceso&gt; &lt;&lt;parámetro1&gt;,…,&lt;parámetroN&gt;&gt;
+&lt;tipoDevuelto&gt; &lt;nombreMétodo&gt;(&lt;argumentos&gt;) {
+ ...
 }</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">parámetros de tipo pueden usarse dentro del método parametrizado para declarar el tipo del valor devuelto por el método, de sus argumentos y de sus objetos locales</strong>.</p>
+</li>
+<li>
+<p>Estos <strong class="blue">parámetros de tipo (formales) se especifican posteriormente con un tipo concreto (actual) al invocar el método parametrizado</strong>, lo que produce la encarnación del método.</p>
+</li>
+<li>
+<p><em>Ejemplo</em>: <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_listas/a5_parametrized3">greaters</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>TicTacToe - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_ticTacToe/a9_generics">generics</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="colecciones">Colecciones</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Java proporciona en el paquete <em>java.util</em> un conjunto de clases para representar y manejar estructuras de datos.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Antes de la aparición de la plataforma Java 2, sólo se disponía de un conjunto muy limitado de clases para las estructuras de datos más comunes: <em>Vector, Stack, Hashtable,</em> y el interfaz <em>Enumeration</em> para recorrer los elementos de estas clases.</p>
+</li>
+<li>
+<p>Java 2 incorpora un  <em>framework</em> más completo inspirado en la librería STL de C++, pero manteniendo compatibles las clases heredadas de las versiones anteriores.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Esta biblioteca de clases separa los interfaces de sus implementaciones, lo que proporciona mayor abstracción al usar la biblioteca, y facilita la extensibilidad de la misma.</p>
+</li>
+<li>
+<p>A partir de la JDK 1.5 las clases de la biblioteca son clases parametrizadas.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 40%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Iterator.svg" alt="Iterator" width="119" height="186">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Collection.svg" alt="Collection" width="324" height="418">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Map.svg" alt="Map" width="143" height="344">
 </div>
 </div></div></td>
 </tr>
@@ -12267,31 +12430,62 @@ public static void main(String[] args) {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 42.5742%;">
-<col style="width: 57.4258%;">
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Collection2.svg" alt="Collection2" width="1109" height="534">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Map2.svg" alt="Map2" width="746" height="474">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>La razón es que si fuera así, entonces las siguientes sentencias:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>harían que <strong class="red">pudiéramos copiar una referencia a un entero en una referencia a un doble, lo cual es incorrecto</strong>.</p>
-</li>
-</ul>
-</div>
+<p><strong><span class="underline">Interfaz Collection&lt;E&gt;:</span></strong> Es la raíz de la jerarquía de las clases de colecciones, y proporciona los métodos comunes a todas ellas:</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Lista&lt;Double&gt; listaReales = new Lista&lt;Double&gt;();
-Lista&lt;Number&gt; listaNumeros = listaReales; // ERROR
-listaNumeros.add(new Integer(1));
-Double doble = listaReales.get(0);</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">int size()
+boolean isEmpty()
+boolean contains(Object o)
+boolean containsAll(Collection&lt;?&gt; c)
+Iterator&lt;E&gt; iterator()
+Object[] toArray()
+&lt;T&gt; T[] toArray(T[] a)
+boolean add(E e)
+boolean remove(Object o)
+boolean addAll(Collection&lt;? extends E&gt; c)
+boolean removeAll(Collection&lt;?&gt; c)
+boolean retainAll(Collection&lt;?&gt; c)
+void clear()
+boolean equals(Object o)
+int hashCode()</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12299,50 +12493,220 @@ Double doble = listaReales.get(0);</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Para resolver este error de compilación se debe <strong class="green">usar un parámetro de tipo comodín para declarar el tipo del argumento de la función <em>suma</em>()</strong>, como se muestra a continuación:</p>
+<p><strong><span class="underline">Interfaz Iterator&lt;E&gt;:</span></strong> Permite recorrer los elementos de las clases de colecciones:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>donde el método <em>remove</em>() debe llamarse sólo después de <em>next</em>(), y elimina de la colección el último elemento devuelto por éste;</p>
+</li>
+<li>
+<p>no debe modificarse una colección mientras un iterador la recorre de ninguna otra manera que invocando <em>remove</em>() sobre ese iterador, porque, en otro caso, el comportamiento del iterador no está definido (la implementación actual produce una excepción <em>ConcurrentModificationException</em>);</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class Lista&lt;Elemento extends Number&gt; {
-     …
-     public double suma(Lista&lt;? extends Number&gt; lista) {
-         double suma = 0.0;
-         Iterador&lt;Elemento&gt; iterador = this.iterador();
-         while (iterador.hasNext()) {
-              Elemento elemento = iterador.next();
-              suma += elemento.doubleValue();
-     }
-     Iterador&lt;? extends Number&gt; iteradorLista = lista.iterador();
-     while (iteradorLista.hasNext()) {
-         Number numero = iteradorLista.next();
-         suma += numero.doubleValue();
-     }
-     return suma;
-}
-…
-public static void main(String[] args) {
-     Integer i1 = new Integer(1);
-     Integer i2 = new Integer(2);
-     Integer i3 = new Integer(3);
-     Lista&lt;Integer&gt; listaEnteros = new Lista&lt;Integer&gt;();
-     listaEnteros.add(i1);
-     listaEnteros.add(i2);
-     listaEnteros.add(i3);
-
-     Double d1 = new Double(1.1);
-     Double d2 = new Double(2.2);
-     Double d3 = new Double(3.3);
-     Lista&lt;Double&gt; listaReales = new Lista&lt;Double&gt;();
-     listaReales.add(d1);
-     listaReales.add(d2);
-     listaReales.add(d3);
-     double suma = listaEnteros.suma(listaReales); // CORRECTO
-     System.out.println("La suma de los elementos de " +
-             listaEnteros + " y " + listaReales + " es " + suma);
-  }
-}</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">boolean hasNext()
+E next()
+void remove()</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="listas">Listas</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz List&lt;E&gt;:</strong> Representa una secuencia de elementos que ocupan una cierta posición en la colección, en la que puede haber elementos repetidos.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">E get(int index)
+E set(int index, E element)
+void add(int index, E element)
+E remove(int index)
+int indexOf(Object o)
+int lastIndexOf(Object o)
+ListIterator&lt;E&gt; listIterator()
+ListIterator&lt;E&gt; listIterator(int index)
+List&lt;E&gt; subList(int fromIndex, int toIndex)
+boolean addAll(int index, Collection&lt;? extends E&gt; c)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz ListIterator&lt;E&gt;:</strong> Recorre los elementos de una lista:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">boolean hasPrevious()
+E previous()
+int nextIndex()
+int previousIndex()
+void add(E e)
+void set(E e)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>donde el método <em>remove()</em> debe llamarse sólo después de <em>next()</em> o <em>previous()</em>, y elimina de la colección el último elemento devuelto por éstos;</p>
+</li>
+<li>
+<p>donde <em>add()</em> inserta justo antes del elemento que se obtendría con <em>next()</em> y justo después del elemento que se obtendría con <em>previous()</em>;</p>
+</li>
+<li>
+<p><em>set()</em> reemplaza el último elemento devuelto por <em>next</em>() o <em>previous()</em>, y sólo puede invocarse si después de estas operaciones no se ha invocado <em>add()</em> o <em>set()</em>;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Las clases que implementan el interfaz List&lt;E&gt; son:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase ArrayList&lt;E&gt;:</strong> que proporciona una implementación basada en vectores de elementos que autoajustan su tamaño según se añaden elementos;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public ArrayList()
+public ArrayList(int initialCapacity)
+public ArrayList(Collection&lt;? extends E&gt; c)
+public void trimToSize()
+public void ensureCapacity(int minCapacity)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase LinkedList&lt;E&gt;:</strong> que utiliza listas doblemente enlazadas; además implementa el <strong>interfaz Deque&lt;E&gt;</strong>, por lo que puede usarse para tratar con colas (se verá más adelante);</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public LinkedList()
+public LinkedList(Collection&lt;? extends E&gt; c)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase Vector&lt;E&gt;:</strong> también usa vectores autoajustables, y se mantiene por razones de compatibilidad con código heredado; además está sincronizada para evitar accesos concurrentes, lo que conlleva un cierto sobrecoste adicional;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public Vector()
+public Vector(int initialCapacity)
+public Vector(int initialCapacity, int capacityIncrement)
+public Vector(Collection&lt;? extends E&gt; c)
+public void copyInto(Object[] anArray)
+public void trimToSize()
+public void ensureCapacity(int minCapacity)
+public void setSize(int newSize)
+public int capacity()
+public Enumeration&lt;E&gt; elements()
+public int indexOf(Object o, int index)
+public int lastIndexOf(Object o, int index)
+public E elementAt(int index)
+public E firstElement()
+public E lastElement()
+public void setElementAt(E obj, int index)
+public void removeElementAt(int index)
+public void insertElementAt(E obj, int index)
+public void addElement(E obj)
+public boolean removeElement(Object obj)
+public void removeAllElements()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Stack&lt;E&gt;:</strong> Representa una pila LIFO.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public Stack()
+public E push(E item)
+public E pop()
+public E peek()
+public boolean empty()
+public int search(Object o)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="colas">Colas</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz Queue&lt;E&gt;:</strong> Las colas ordenan sus elementos según un orden determinado (normalmente FIFO, aunque no necesariamente):</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">boolean offer(E e)
+E remove()
+E poll()
+E element()
+E peek()</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12351,21 +12715,82 @@ public static void main(String[] args) {
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 35%;">
+<col style="width: 35%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong>Excepción</strong></th>
+<th class="tableblock halign-left valign-top"><strong>No excepción</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Inserción</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>add()</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>offer()</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Extracción</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>remove()</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>poll()</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Consulta</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>element()</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>peek()</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>La única clase que implementa el <strong><em>interfaz Queue&lt;E&gt;</em></strong> es:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>El error de compilación no se produce porque el uso del parámetro comodín relaja el sistema de tipos, de manera que las siguientes sentencias son correctas:</p>
+<p><strong>Clase PriorityQueue&lt;E&gt;:</strong> proporciona una implementación basada en prioridades que se establecen por el orden natural de sus elementos (según el interfaz <em>Comparable</em>) o por un comparador de elementos que se suministra a la cola en su construcción. Todas las claves deben implementar el interfaz <em>Comparable</em> (o ser aceptadas por su <em>Comparator</em>).</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Lista&lt;Double&gt; listaReales = new Lista&lt;Double&gt;();
-Lista&lt;? extends Number&gt; listaNumeros = listaReales; // CORRECTO</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">public PriorityQueue()
+public PriorityQueue(int initialCapacity)
+public PriorityQueue(int initialCapacity,
+Comparator&lt;? super E&gt; comparator)
+public PriorityQueue(Collection&lt;? extends E&gt; c)
+public PriorityQueue(PriorityQueue&lt;? extends E&gt; c)
+public PriorityQueue(SortedSet&lt;? extends E&gt; c)</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12373,14 +12798,59 @@ Lista&lt;? extends Number&gt; listaNumeros = listaReales; // CORRECTO</code></pr
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Sin embargo, usar el parámetro comodín impone que con la referencia no se puedan usar métodos de la clase parametrizada que pudieran producir una incompatibilidad de tipos:</p>
+<p><strong>Interfaz Deque&lt;E&gt;:</strong> Son colas que permiten la inserción y extracción de elementos en ambos extremos (<em>double ended queue</em>).</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">listaNumeros.add(new Double(3));
-Double x = listaNumeros.get(0); // ERROR</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">void addFirst(E e)
+void addLast(E e)
+boolean offerFirst(E e)
+boolean offerLast(E e)
+E removeFirst()
+E removeLast()
+E pollFirst()
+E pollLast()
+E getFirst()
+E getLast()
+E peekFirst()
+E peekLast()
+boolean removeFirstOccurrence(Object o)
+boolean removeLastOccurrence(Object o)
+void push(E e)
+E pop()
+Iterator&lt;E&gt; descendingIterator()</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Las clases que implementan el <strong>interfaz Deque&lt;E&gt;</strong> son:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase LinkedList&lt;E&gt;:</strong> Implementación mediante listas doblemente enlazadas.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public LinkedList()
+public LinkedList(Collection&lt;? extends E&gt; c)</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12388,15 +12858,407 @@ Double x = listaNumeros.get(0); // ERROR</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>pero sí se pueden usar métodos que no puedan producir incompatibilidad de tipos:</p>
+<p><strong>Clase ArrayDeque&lt;E&gt;:</strong> Implementación mediante vectores autoajustables.</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Number x = listaNumeros.get(0); // CORRECTO
-String cadena = listaNumeros.toString(); // CORRECTO
-listaNumeros.clear(); // CORRECTO</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">public ArrayDeque()
+public ArrayDeque(Collection&lt;? extends E&gt; c)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="conjuntos">Conjuntos</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Representa una colección de elementos no repetidos. No añade ningún método nuevo a <em>Collection&lt;E&gt;</em>, sólo estipula ciertas restricciones en sus métodos;</p>
+</li>
+<li>
+<p>Las clases que implementan este interfaz son:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase EnumSet&lt;E extends Enum&lt;E&gt;&gt;:</strong> Los elementos del conjunto deben ser valores de enumerados. Proporcionan una representación muy compacta y eficiente. Los elementos se recorren según su orden natural. La clase es abstracta y sólo tiene métodos genéricos estáticos para crear los conjuntos.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt;
+noneOf(Class&lt;E&gt; elementType)
+public static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt;
+allOf(Class&lt;E&gt; elementType)
+public static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt; copyOf(EnumSet&lt;E&gt; s)
+public static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt; copyOf(Collection&lt;E&gt; c)
+public static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt;
+    complementOf(EnumSet&lt;E&gt; s)
+public static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt; of(E e)
+public static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt; of(E e1, E e2)
+public static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt; of(E e1, E e2, E e3)
+public static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt; of(E e1, E e2, E e3, E e4)
+public static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt; of(E e1, E e2, E e3, E e4, E e5)
+public static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt; of(E first, E... rest)
+public static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt; range(E from, E to)
+public EnumSet&lt;E&gt; clone()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase HashSet&lt;E&gt;:</strong> Implementación mediante una tabla hash (realmente un <em>HashMap</em>). No garantiza ningún orden al iterar sobre el conjunto.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public HashSet()
+public HashSet(int initialCapacity)
+public HashSet(int initialCapacity, float loadFactor)
+public HashSet(Collection&lt;? extends E&gt; c)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase LinkedHashSet&lt;E&gt;:#</strong> Implementación mediante tabla hash y listas enlazadas (mediante <em>LinkedHashMap</em>), en la que los elementos se recorren en el mismo orden en el que se insertaron.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public LinkedHashSet()
+public LinkedHashSet(int initialCapacity)
+public LinkedHashSet(int initialCapacity, float loadFactor)
+public LinkedHashSet(Collection&lt;? extends E&gt; c)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz SortedSet&lt;E&gt;:</strong> Representa un conjunto que establece un orden total sobre sus elementos. Los elementos se ordenan por su orden natural (según el interfaz <em>Comparable</em>) o por un comparador de elementos que se suministra al conjunto en su construcción. Todas las claves deben implementar el interfaz <em>Comparable</em> (o ser aceptadas por su <em>Comparator</em>).</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Comparator&lt;? super E&gt; comparator()
+SortedSet&lt;E&gt; subSet(E fromElement, E toElement)
+SortedSet&lt;E&gt; headSet(E toElement)
+SortedSet&lt;E&gt; tailSet(E fromElement)
+E first()
+E last()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz NavigableSet&lt;E&gt;:</strong> Extiende <em>SortedSet&lt;E&gt;</em> para buscar un elemento menor, menor o igual, mayor o igual, y mayor que un cierto elemento dado, más otros métodos de búsqueda.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">E lower(E e)
+E floor(E e)
+E ceiling(E e)
+E higher(E e)
+E pollFirst()
+E pollLast()
+NavigableSet&lt;E&gt; descendingSet()
+Iterator&lt;E&gt; descendingIterator()
+NavigableSet&lt;E&gt; subSet(E fromElement, boolean fromInclusive,
+E toElement, boolean toInclusive)
+NavigableSet&lt;E&gt; headSet(E toElement, boolean inclusive)
+NavigableSet&lt;E&gt; tailSet(E fromElement, boolean inclusive)
+SortedSet&lt;E&gt; subSet(E fromElement, E toElement)
+SortedSet&lt;E&gt; headSet(E toElement)
+SortedSet&lt;E&gt; tailSet(E fromElement)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>La única clase que implementa el interfaz <em>NavigableSet&lt;E&gt;</em> es:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase TreeSet&lt;E&gt;:</strong> Implementación mediante <em>TreeMap</em>, en la que los elementos se recorren según su orden natural.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public TreeSet()
+public TreeSet(Comparator&lt;? super E&gt; comparator)
+public TreeSet(Collection&lt;? extends E&gt; c)
+public TreeSet(SortedSet&lt;E&gt; s)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="mapas">Mapas</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz Map&lt;K,V&gt;:</strong> Un mapa representa una colección de elementos formados por una clave y un valor. En un mapa no puede haber elementos con claves repetidas, cada clave puede tener un valor como máximo.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">boolean containsKey(Object key)
+boolean containsValue(Object value)
+V get(Object key)
+V put(K key, V value)
+V remove(Object key)
+void putAll(Map&lt;? extends K,? extends V&gt; m)
+Set&lt;K&gt; keySet()
+Collection&lt;V&gt; values()
+Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Las clases que implementan este interfaz son:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase EnumMap&lt;K extends Enum&lt;K&gt;,V&gt;:</strong> Implementación para usarse con claves de tipo enumerados. Las claves deben ser valores de enumerados. Proporcionan una representación muy compacta y eficiente basada en vectores. Los elementos se recorren según su orden natural.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public EnumMap(Class&lt;K&gt; keyType)
+public EnumMap(EnumMap&lt;K,? extends V&gt; m)
+public EnumMap(Map&lt;K,? extends V&gt; m)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase HashMap&lt;K,V&gt;:</strong> Implementación mediante una tabla hash. No garantiza ningún orden al iterar sobre el mapa.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public HashMap()
+public HashMap(int initialCapacity)
+public HashMap(int initialCapacity, float loadFactor)
+public HashMap(Map&lt;? extends K,? extends V&gt; m)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase LinkedHashMap&lt;K,V&gt;:</strong> Implementación mediante una tabla hash y listas doblemente enlazadas. Los elementos se recorren en el orden de inserción de sus claves.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public LinkedHashMap()
+public LinkedHashMap(int initialCapacity)
+public LinkedHashMap(int initialCapacity, float loadFactor)
+public LinkedHashMap(Map&lt;? extends K,? extends V&gt; m)
+public LinkedHashMap(int initialCapacity, float loadFactor,
+     boolean accessOrder)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase WeakHashMap&lt;K,V&gt;:</strong> Implementación mediante una tabla hash y claves débiles. Los elementos cuyas claves dejan de ser referenciadas se destruyen automáticamente.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public WeakHashMap()
+public WeakHashMap(int initialCapacity)
+public WeakHashMap(int initialCapacity, float loadFactor)
+public WeakHashMap(Map&lt;? extends K,? extends V&gt; m)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase IdentityHashMap&lt;K,V&gt;:</strong> Implementación mediante una tabla hash y con comparación de claves y valores mediante == en lugar de equals.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public IdentityHashMap()
+public IdentityHashMap(int expectedMaxSize)
+public IdentityHashMap(Map&lt;? extends K,? extends V&gt; m)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz SortedMap&lt;K,V&gt;:</strong> Un mapa que proporciona un orden total sobre sus claves. El mapa se ordena según el orden natural de sus claves, o mediante un <em>Comparator</em> que se suministra al crear el mapa. Este orden se sigue al iterar sobre las colecciones que devuelve el mapa. Todas las claves deben implementar el interfaz <em>Comparable</em> (o ser aceptadas por su <em>Comparator</em>).</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Comparator&lt;? super K&gt; comparator()
+SortedMap&lt;K,V&gt; subMap(K fromKey, K toKey)
+SortedMap&lt;K,V&gt; headMap(K toKey)
+SortedMap&lt;K,V&gt; tailMap(K fromKey)
+K firstKey()
+K lastKey()
+Set&lt;K&gt; keySet()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz NavigableMap&lt;K,V&gt; (I):</strong> Extiende <em>SortedMap&lt;E&gt;</em> para buscar un elemento menor, menor o igual, mayor o igual, y mayor que un cierto elemento dado, más otros métodos de búsqueda.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Map.Entry&lt;K,V&gt; lowerEntry(K key)
+K lowerKey(K key)
+Map.Entry&lt;K,V&gt; floorEntry(K key)
+K floorKey(K key)
+Map.Entry&lt;K,V&gt; ceilingEntry(K key)
+K ceilingKey(K key)
+Map.Entry&lt;K,V&gt; higherEntry(K key)
+K higherKey(K key)
+Map.Entry&lt;K,V&gt; firstEntry()
+Map.Entry&lt;K,V&gt; lastEntry()
+Map.Entry&lt;K,V&gt; pollFirstEntry()
+Map.Entry&lt;K,V&gt; pollLastEntry()
+NavigableMap&lt;K,V&gt; descendingMap()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz NavigableMap&lt;K,V&gt; (II):</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">NavigableSet&lt;K&gt; navigableKeySet()
+NavigableSet&lt;K&gt; descendingKeySet()
+NavigableMap&lt;K,V&gt; subMap(K fromKey, boolean fromInclusive,
+                         K toKey, boolean toInclusive)
+NavigableMap&lt;K,V&gt; headMap(K toKey, boolean inclusive)
+NavigableMap&lt;K,V&gt; tailMap(K fromKey, boolean inclusive)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>La única clase que implementa el interfaz <em>NavigableMap&lt;K,V&gt;</em> es:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase TreeMap&lt;K,V&gt;:</strong> Implementación mediante un árbol, en la que los elementos se recorren según su orden natural (o en el orden que proporciona su <em>Comparator</em>).</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public TreeMap()
+public TreeMap(Comparator&lt;? super K&gt; comparator)
+public TreeMap(Map&lt;? extends K,? extends V&gt; m)
+public TreeMap(SortedMap&lt;K,? extends V&gt; m)</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12404,54 +13266,30 @@ listaNumeros.clear(); // CORRECTO</code></pre>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="red">Ejemplo:</span></strong></th>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class Lista&lt;Elemento extends Number&gt; {
-     …
-     public void addAll(Lista&lt;? extends Elemento&gt; lista) {
-        Iterador&lt;? extends Elemento&gt; iteradorLista = lista.iterador();
-        while (iteradorLista.hasNext()) {
-            Elemento elemento = iteradorLista.next();
-            this.add(elemento);
-     }
-}
-…</code></pre>
-</div>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>MultiMap - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/a0_itinerario/a7_parametrized/a1_multimap">v0</a></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public static void main(String[] args) {
-     …
-     Lista&lt;Number&gt; listaNumeros = new Lista&lt;Number&gt;();
-     listaNumeros.addAll(listaEnteros);
-     listaNumeros.addAll(listaReales);
-     System.out.println("La lista resultado de unir " +
-             listaEnteros + " y " + listaReales + " es " +
-             listaNumeros);
-     …
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">La lista resultado de unir {1; 2; 3} y {1.1; 2.2; 3.3}  es {1; 2; 3; 1.1; 2.2; 3.3}</code></pre>
-</div>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -12545,7 +13383,7 @@ listaNumeros.clear(); // CORRECTO</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-03-23 17:31:31 UTC
+Last updated 2023-04-14 08:25:45 UTC
 </div>
 </div>
 </body>
