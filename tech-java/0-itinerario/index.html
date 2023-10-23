@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.18">
+<meta name="generator" content="Asciidoctor 2.0.20">
 <meta name="author" content="Universo Santa Tecla">
 <title>Java</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -209,13 +209,10 @@ table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
 .admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
 .exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
-.exampleblock>.content>:first-child{margin-top:0}
-.exampleblock>.content>:last-child{margin-bottom:0}
 .sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
-.sidebarblock>:first-child{margin-top:0}
-.sidebarblock>:last-child{margin-bottom:0}
 .sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
-.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
 .literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
 @media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
 @media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
@@ -394,7 +391,7 @@ b.conum *{color:inherit!important}
 dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
 h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
 p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
-p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
 p{margin-bottom:1.25rem}
 .sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
 .exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
@@ -489,7 +486,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#limitaciones-de-la-herencia">Limitaciones de la  Herencia</a></li>
 <li><a href="#beneficios-de-la-herencia">Beneficios de la Herencia</a></li>
 <li><a href="#polimorfismo">Polimorfismo</a></li>
-<li><a href="#converción-de-tipos">Converción de Tipos</a></li>
+<li><a href="#conversión-de-tipos-2">Conversión de Tipos</a></li>
 </ul>
 </li>
 <li><a href="#programación-modular">Programación Modular</a>
@@ -560,7 +557,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-java">git</
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="images/contexto.svg" alt="contexto" width="1389" height="956">
+<img src="images/contexto.svg" alt="contexto" width="1387" height="955">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -580,12 +577,12 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-java">git</
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/compilador.svg" alt="compilador" width="602" height="265">
+<img src="images/compilador.svg" alt="compilador" width="598" height="264">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/interprete.svg" alt="interprete" width="460" height="238">
+<img src="images/interprete.svg" alt="interprete" width="460" height="237">
 </div>
 </div></div></td>
 </tr>
@@ -5471,29 +5468,6 @@ private Interval clone() {
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
-</li>
-</ul>
-</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
@@ -6096,29 +6070,6 @@ Exception in thread "main" java.lang.NegativeArraySizeException
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
-</li>
-</ul>
-</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
@@ -6183,29 +6134,6 @@ Exception in thread "main" java.lang.NegativeArraySizeException
 <ul>
 <li>
 <p>Fraction - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_values/Fraction.java"><em>Fraction</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_values/FractionView.java"><em>FractionView</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_values/App.java"><em>App</em></a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
 </li>
 </ul>
 </div></div></td>
@@ -6376,11 +6304,17 @@ private Intervalo copia() {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="">interval</a> - <a href=""><em>ServicesContract</em></a></p>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/cdf6862fac6b5bc6bba3652b857050a11c2efada/src/main/java/es/usantatecla/aX_managers/services/a1_classes"><em>ServicesContract</em></a></p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_listas/a1_basic/a0_classes"><em>List</em></a></p>
+</li>
+</ul>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -6565,63 +6499,32 @@ private Intervalo copia() {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Fecha {
- private int dia;
- private int mes;
- private int año;
-private static final int[] DIAS_MESES =
-  {31,28,31,30,31,30, 31,31,30,31,30,31};
-
-public boolean posterior(Fecha fecha) {
-  boolean resultado;
-  if (this.año == fecha.año)
-  if (this.mes == fecha.mes)
-    resultado = this.dia &gt; fecha.dia;
-  else
-    resultado = this.mes &gt; fecha.mes;
-  else
-    resultado = this.año &gt; fecha.año;
-  return resultado;
-}
-
-public static boolean bisiesto(int año) {
-  return año%4 == 0;
-}</code></pre>
-</div>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/a5_units/a1_interval/a2_statics"><em>Interval</em></a></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public boolean enBisiesto() {
-  return Fecha.bisiesto(año);
-}
-
-public int diasTranscurridosAño() {
-  int dias = dia - 1;
-  for (int i = 1; i &lt; mes; i++)
-    dias += Fecha.DIAS_MESES[i - 1];
-  if (this.enBisiesto() &amp;&amp;
-    this.posterior(new Fecha(29, 2, año)))
-dias++;
-  return dias;
-}
-
-public static int diasAño(int año) {
-  int dias = 0;
-  for (int i = 0; i &lt; Fecha.DIAS_MESES.length; i++)
-      dias += Fecha.DIAS_MESES[i];
-  if (Fecha.bisiesto(año))
-     dias++;
-  return dias;
-  }</code></pre>
-</div>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/a5_units/a3_date/a2_statics"><em>Date</em></a></p>
+</li>
+</ul>
 </div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -6992,8 +6895,7 @@ public static String copyValueOf(char[],int, int)</code></pre>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html"><em>StringBuffer</em></a></th>
-<th class="tableblock halign-left valign-top"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html"><em>StringBuilder</em></a></th>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Clases</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html"><em>StringBuffer</em></a> y <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html"><em>StringBuilder</em></a></th>
 </tr>
 </thead>
 <tbody>
@@ -7536,41 +7438,31 @@ class App {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
-<tbody>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Color {
-  RED,
-  YELLOW;
-}
-
-class App {
-  public static void main(String[] args){
-    String string = "";
-    for(Color color : Color.values){
-      string += (color.ordinal() + 1) + ". " + color.name();
-    }
-    new Console().writeln(string);
-  }
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
 </tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/a5_units/a3_date/a3_enums"><em>Date</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic/src/main/java/usantatecla"><em>TicTacToe</em></a></p>
+</li>
+</ul>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -7809,7 +7701,7 @@ class App {
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/Jerarquia.svg" alt="Jerarquia" width="602" height="764">
+<img src="images/Jerarquia.svg" alt="Jerarquia" width="602" height="765">
 </div>
 </div></div></td>
 </tr>
@@ -7922,7 +7814,7 @@ class Hija extends Padre {
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">  class &lt;Clase&gt; {
+<pre class="highlight"><code class="language-java" data-lang="java">  class &lt;Clase&gt; extends &lt;Base&gt; {
 
     public &lt;Clase&gt;({ &lt;parametro&gt; }* ){
       super( { &lt;expresion&gt; }*);
@@ -7984,6 +7876,45 @@ class Hija extends Padre {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
 <img src="images/HerenciaExtencion2.svg" alt="HerenciaExtencion2" width="209" height="176">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>List - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_listas/a1_basic/a0_classes"><em>Composición</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/aX_listas/a1_basic/a4_extends/Node.java">Herencia</a>: Node</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/lists.svg" alt="lists" width="879" height="1168">
 </div>
 </div></div></td>
 </tr>
@@ -8051,6 +7982,30 @@ class Hija extends Padre {
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>List - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/aX_listas/a1_basic/a4_extends/Node.java"><em>Herencia</em></a>: Node - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_listas/a1_basic/a4_extends_protected/Node.java">Protected</a>: Node - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/aX_listas/a1_basic/a4_extends_protected_attributes/Node.java">Protected Attributes</a>: Node!!!</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -8093,6 +8048,30 @@ class Hija extends Padre {
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>SentinnelList - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/aX_listas/a1_basic/a4_extends/SentinelList.java"><em>Redefinición</em></a>: por anulación</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 <div class="sect4">
 <h5 id="referencia-super">Referencia <em>super</em></h5>
 <table class="tableblock frame-all grid-all stretch">
@@ -8121,6 +8100,30 @@ class Hija extends Padre {
 <img src="images/Conjunto.svg" alt="Conjunto" width="382" height="176">
 </div>
 </div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Set - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/aX_listas/a1_basic/a4_extends/Set.java"><em>Redefinición</em></a>: por refinamiento, Liskov?!?!</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -8177,9 +8180,9 @@ class Hija extends Padre {
 <h3 id="clases-abstractas">Clases Abstractas</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 20%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
 </colgroup>
 <thead>
 <tr>
@@ -8193,123 +8196,64 @@ class Hija extends Padre {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Surgen de la descripción de los atributos y métodos que definen el comportamiento de un cierto conjunto de objetos homogéneos</p>
+<p>Surgen de la descripción de los atributos y métodos que <strong class="green">definen el comportamiento de un cierto conjunto de objetos homogéneos</strong></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Son clases <strong>NO</strong> instanciables que surgen del factor común del código de otras clases con atributos comunes, métodos comunes y/o cabeceras de métodos comunes sin definición.</p>
+<p>Son clases <strong class="red">NO instanciables</strong> que surgen del factor común del código de otras clases con atributos comunes, métodos comunes y/o <strong class="blue">cabeceras de métodos comunes sin definición</strong>, pero <strong class="red">no pueden ser con visibilidad privada</strong></p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<img src="images/ClassAbstracta.jpg" alt="height32">
+<pre class="highlight"><code class="language-java" data-lang="java">abstract class &lt;ClaseAbstracta&gt; {
+  ...
+  public abstract void &lt;métodoAbstracto&gt;( &lt;parametros&gt; );
+  protected abstract void &lt;métodoAbstracto&gt;( &lt;parametros&gt; );
+  // private abstract void &lt;métodoAbstracto&gt;( &lt;parametros&gt; ); ERROR!!!
+  ...
+}</code></pre>
 </div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<div class="ulist">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>donde los métodos abstractos no pueden ser <em>private</em>.</p>
+<p>Dispenser - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a5_extends_a1_node"><em>Sin herencia</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a5_extends_a2_dispenser">con herencia</a></p>
 </li>
 </ul>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplos</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>En un dispensador <strong>NO</strong> acotado se pueden meter o sacar elementos sin limitación para el número de elementos; una pila es un dispensador con política LIFO; una cola es una dispensador con política FIFO</em></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/Dispensador.svg" alt="Dispensador" width="377" height="176">
-</div>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
+<col style="width: 100%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplos</span></strong></th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">abstract class DispensadorNoAcotado {
-  protected Nodo entrada;
-  protected DispensadorNoAcotado(){
-    entrada = null;
-  }
-
- public void meter(Intervalo intervalo){
-   entrada = new Nodo(null, intervalo, entrada);
- }
-
- public abstract Intervalo sacar();
-
- public boolean vacio(){
-   return entrada == null;
-
- }
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class PilaNoAcotada extends DispensadorNoAcotado {
-  public Intervalo sacar() {
-    Intervalo intervalo = entrada.getIntervalo();
-    entrada = entrada.getSiguiente();
-    return intervalo;
-  }
-}
-
-class ColaNoAcotada extends DispensadorNoAcotado {
-  private Nodo salida;
-  public ColaNoAcotada() {
-    salida = null;
-  }
-  public void meter(Intervalo intervalo) {
-    boolean vacio = this.vacio();
-    super.meter(intervalo);
-    if (vacio) {
-      salida = entrada;
-    }
-}
-
-public Intervalo sacar() {
-  Intervalo intervalo = salida.getIntervalo();
-  if (salida.getAnterior() == null) {
-    entrada = null;
-    salida = null;
-  } else {
-    salida = salida.getAnterior();
-    salida.setSiguiente(null);
-  }
-  return intervalo;
-  }
-}</code></pre>
+<img src="images/dispenser.svg" alt="dispenser" width="2201" height="1021">
 </div>
 </div></div></td>
 </tr>
@@ -8322,7 +8266,7 @@ public Intervalo sacar() {
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">- <strong class="green">Posibilidades:</strong></th>
 <th class="tableblock halign-left valign-top"></th>
 </tr>
 </thead>
@@ -8331,32 +8275,25 @@ public Intervalo sacar() {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>Posibilidades:</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>una clase abstracta puede ser hija de otra clase abstracta porque se especializa (añadiendo atributos y/o métodos y/o redefiniendo métodos) pero <strong>NO</strong> redefine todos los métodos abstractos transmitidos y/o añade algún método abstracto;</p>
-</li>
-</ul>
-</div>
+<p>una <strong class="green">clase abstracta puede ser hija de otra clase abstracta</strong> porque se especializa (añadiendo atributos y/o métodos y/o redefiniendo métodos) pero <strong class="blue">NO redefine todos los métodos abstractos transmitidos y/o añade algún método abstracto</strong>;</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/Alumno.svg" alt="Alumno" width="476" height="339">
+<img src="images/Alumno.svg" alt="Alumno" width="476" height="338">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>una clase abstracta puede ser hija de una clase concreta si en su especialización añade algún método abstracto</p>
+<p>una <strong class="green">clase abstracta puede ser hija de una clase concreta si en su especialización añade algún método abstracto</strong></p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/persona.svg" alt="persona" width="278" height="414">
+<img src="images/persona.svg" alt="persona" width="277" height="414">
 </div>
 </div></div></td>
 </tr>
@@ -8369,8 +8306,8 @@ public Intervalo sacar() {
 </colgroup>
 <thead>
 <tr>
+<th class="tableblock halign-left valign-top">- <strong class="green">Posibilidades:</strong></th>
 <th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo:</span></strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8378,7 +8315,7 @@ public Intervalo sacar() {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Un método no abstracto de una clase abstracta puede definirse apoyándose en métodos abstractos entendiendo que será un código que se transmite hasta clases concretas que redefinen los métodos abstractos;</p>
+<p>Un <strong class="green">método no abstracto de una clase abstracta puede definirse apoyándose en métodos abstractos</strong> entendiendo que será un código que se transmite hasta clases concretas que redefinen los métodos abstractos;</p>
 </li>
 </ul>
 </div></div></td>
@@ -8420,8 +8357,8 @@ class Esfera extends Solido {
 <h3 id="herencia-por-implementación">Herencia por Implementación</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
 <thead>
 <tr>
@@ -8434,7 +8371,17 @@ class Esfera extends Solido {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Son clases abstractas <strong>puras</strong> que no contienen ningún atributo ni la definición de ningún método, sólo contienen métodos abstractos. Puede ser clases padre de clases u otros interfaces.</p>
+<p>Son <strong class="blue">clases abstractas puras</strong> que no contienen ningún atributo ni la definición de ningún método, <strong class="blue">sólo contienen métodos abstractos</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>puede ser base de clases u otros interfaces.</p>
+</li>
+<li>
+<p>donde todos los métodos del interfaz son públicos.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -8458,131 +8405,27 @@ interface &lt;interfazDerivado&gt; extends &lt;interfazBase&gt; {
 </tr>
 </tbody>
 </table>
-<div class="ulist">
-<ul>
-<li>
-<p>donde todos los métodos del interfaz son públicos.</p>
-</li>
-</ul>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Un dispensador <strong>NO</strong> acotado es un dispensador implantado con listas dinámicas; un dispensador acotado es un dispensador implantado con vectores</p>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Dispenser - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a5_extends_a2_dispenser"><em>herencia</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a6_interfaces">interfaces</a></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/DispensadorHerencia.svg" alt="DispensadorHerencia" width="769" height="287">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><strong><span class="blue">Ejemplos</span></strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">interface Dispensador {
-  void meter(Intervalo elemento);
-
-  Intervalo sacar();
-
-  boolean vacio();
-
-}
-
-abstract class DispensadorNoAcotado
-        implements Dispensador {
- …
-  // expuesto anteriormente
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">abstract class DispensadorAcotado implements Dispensador {
-
-  protected Intervalo[] elementos;
-  protected int cuantos;
-  protected int siguiente;
-
-  protected DispensadorAcotado(int tamaño) {
-    elementos = new Intervalo[tamaño];
-    cuantos = 0;
-    siguiente = 0;
-  }
-
-  public void meter(Intervalo intervalo) {
-    cuantos++;
-    elementos[siguiente] = intervalo;
-    siguiente++;
-}
-  public boolean vacio() {
-    return cuantos == 0;
-}
-public boolean lleno() {
-  return cuantos == elementos.length;
-}
-  }
-  class PilaAcotada extends DispensadorAcotado {
-
-public PilaAcotada(int tamaño) {
-  super(tamaño);
-}
-public Intervalo sacar() {
-  cuantos--;
-  siguiente--;
-  return elementos[siguiente];
-  }
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class ColaAcotada extends DispensadorAcotado {
-  private int inicio;
-  public ColaAcotada(int tamaño) {
-    super(tamaño);
-    inicio = 0;
-  }
-
-public void meter(Intervalo intervalo) {
-  super.meter(intervalo);
-  if (siguiente == elementos.length)
-    siguiente = 0;
-}
-
-public Intervalo sacar() {
-  cuantos--;
-  Intervalo intervalo = elementos[inicio];
-  inicio = (inicio + 1) % elementos.length;
-  return intervalo;
-}</code></pre>
-</div>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -8593,28 +8436,20 @@ public Intervalo sacar() {
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Un interfaz <strong>NO</strong> puede heredar de una clase de ninguna manera, pero <strong>SI</strong> puede heredar de otro interfaz por extensión</p>
-</li>
-<li>
-<p>Una clase <strong>SI</strong> puede heredar de una clase por extensión o de un interfaz por implementación</p>
-</li>
-<li>
-<p>La herencia por extensión <strong>NO</strong> disfruta de herencia múltiple, pero la herencia por implementación <strong>SI</strong> disfruta de herencia múltiple</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class &lt;claseDerivada&gt;
+<th class="tableblock halign-left valign-top">- <strong class="blue">Una interfaz</strong>
+* <strong class="red">NO puede heredar de una clase de ninguna manera</strong>
+* <strong class="green">SI puede heredar de otro interfaz por extensión</strong>
+
+- <strong class="blue">Una clase</strong>
+* <strong class="green">SI puede heredar de una clase por extensión</strong>
+* <strong class="gree">SI puede heredar de varios interfaces por implementación</strong>
+
+- <strong class="blue">Herencia mútiple</strong>
+- <strong class="red">La herencia por extensión NO la permite</strong>
+* <strong class="green">la herencia por implementación SI la permite</strong></th>
+<th class="tableblock halign-left valign-top">[source,java]
+&#8230;&#8203;.
+class &lt;claseDerivada&gt;
   extends &lt;claseBase&gt;
   implements &lt;interfaz1&gt;, …, &lt;interfazN&gt; {
   …
@@ -8622,63 +8457,68 @@ public Intervalo sacar() {
 interface &lt;interfazDerivado&gt;
   extends &lt;interfaz1&gt;, …, &lt;interfazN&gt; {
   …
-}</code></pre>
-</div>
-</div></div></td>
+}
+&#8230;&#8203;.</th>
 </tr>
-</tbody>
+</thead>
 </table>
 </div>
 <div class="sect2">
 <h3 id="limitaciones-de-la-herencia">Limitaciones de la  Herencia</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Clases final</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Enumerados</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Metodos final</strong></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>Clases final</strong> no permiten ningún tipo de herencia posterior.</p>
+<p><strong class="red">no permiten ningún tipo de herencia posterior</strong>, por clases de la biblioteca standar</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">final class &lt;clase&gt; {
-  …
+  ...
 }</code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>Metodos final</strong> no permiten ningún tipo de redefinición posterior.</p>
+<p><strong class="red">NO pueden heredar de una clase por extensión</strong>, son siempre <em>final</em></p>
+</li>
+<li>
+<p><strong class="green">SI puede heredar de un interfaz por implementación</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">no permiten ningún tipo de redefinición posterior</strong>, por clases de la biblioteca standar</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">class &lt;clase&gt; {
-  …
+  ...
   final &lt;metodo&gt;
-  …
+  ...
 }</code></pre>
 </div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los enumerados son siempre <em>final.</em></p>
-</li>
-<li>
-<p>Un enumerado <strong>NO</strong> pueden heredar de una clase por extensión, pero <strong>SI</strong> puede heredar de un interfaz por implementación.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -8694,17 +8534,23 @@ interface &lt;interfazDerivado&gt;
 </colgroup>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="green">Integridad de la Arquitectura del Software</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="green">Reusabilidad del código</strong></p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>Integridad de la Arquitectura del Software</strong></p>
+<p>La herencia favorece la <strong class="green">comprensión de la arquitectura del software</strong>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>La herencia favorece la comprensión de la arquitectura del software.</p>
-</li>
-<li>
-<p>La jerarquía de clasificación de las clases establece los niveles de generalización que reducen significativamente el número de clases al estudiar en un diseño.</p>
+<p>La jerarquía de clasificación de las clases establece los <strong class="green">niveles de generalización que reducen significativamente el número de clases al estudiar en un diseño</strong>.</p>
 </li>
 </ul>
 </div>
@@ -8724,14 +8570,11 @@ interface &lt;interfazDerivado&gt;
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>Reusabilidad del código</strong></p>
+<p><strong class="green">Utilización del código de la clase padre previamente escrito, probado y documentado</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Utilización del código de la clase padre previamente escrito, probado y documentado</p>
-</li>
-<li>
-<p>No es necesario duplicar código similar,todo el código común se "factoriza" en la clasee padre.</p>
+<p>No es necesario <strong class="red">duplicar código</strong> similar, todo el código común se "factoriza" en la clase padre</p>
 </li>
 </ul>
 </div>
@@ -8895,7 +8738,7 @@ interface &lt;interfazDerivado&gt;
 <tr>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/Persona2.svg" alt="Persona2" width="197" height="202">
+<img src="images/Persona2.svg" alt="Persona2" width="197" height="201">
 </div>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
@@ -9167,7 +9010,7 @@ b = a.m(a, c);
 </div>
 </div>
 <div class="sect2">
-<h3 id="converción-de-tipos">Converción de Tipos</h3>
+<h3 id="conversión-de-tipos-2">Conversión de Tipos</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -9245,41 +9088,13 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_listas">lists</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/lists.svg" alt="lists" width="874" height="1167">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers">dispenser</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/dispenser.svg" alt="dispenser" width="2202" height="1021">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
 <p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu">menus</a></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/menus.svg" alt="menus" width="1271" height="1365">
+<img src="images/menus.svg" alt="menus" width="1269" height="1365">
 </div>
 </div></div></td>
 </tr>
@@ -11776,7 +11591,7 @@ PilaAcotada&lt;Integer&gt;[] pilas = new PilaAcotada[10];                // AVIS
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/Collection.svg" alt="Collection" width="324" height="418">
+<img src="images/Collection.svg" alt="Collection" width="324" height="419">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
@@ -11798,7 +11613,7 @@ PilaAcotada&lt;Integer&gt;[] pilas = new PilaAcotada[10];                // AVIS
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/Collection2.svg" alt="Collection2" width="1109" height="534">
+<img src="images/Collection2.svg" alt="Collection2" width="1107" height="535">
 </div>
 </div></div></td>
 </tr>
@@ -11808,7 +11623,7 @@ PilaAcotada&lt;Integer&gt;[] pilas = new PilaAcotada[10];                // AVIS
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/Map2.svg" alt="Map2" width="746" height="474">
+<img src="images/Map2.svg" alt="Map2" width="745" height="474">
 </div>
 </div></div></td>
 </tr>
@@ -12742,7 +12557,7 @@ public TreeMap(SortedMap&lt;K,? extends V&gt; m)</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-10 08:00:20 UTC
+Last updated 2023-10-23 11:41:44 UTC
 </div>
 </div>
 </body>
