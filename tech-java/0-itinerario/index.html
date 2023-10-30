@@ -8431,25 +8431,57 @@ interface &lt;interfazDerivado&gt; extends &lt;interfazBase&gt; {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 60%;">
+<col style="width: 40%;">
 </colgroup>
-<thead>
+<tbody>
 <tr>
-<th class="tableblock halign-left valign-top">- <strong class="blue">Una interfaz</strong>
-* <strong class="red">NO puede heredar de una clase de ninguna manera</strong>
-* <strong class="green">SI puede heredar de otro interfaz por extensión</strong>
-
-- <strong class="blue">Una clase</strong>
-* <strong class="green">SI puede heredar de una clase por extensión</strong>
-* <strong class="gree">SI puede heredar de varios interfaces por implementación</strong>
-
-- <strong class="blue">Herencia mútiple</strong>
-- <strong class="red">La herencia por extensión NO la permite</strong>
-* <strong class="green">la herencia por implementación SI la permite</strong></th>
-<th class="tableblock halign-left valign-top">[source,java]
-&#8230;&#8203;.
-class &lt;claseDerivada&gt;
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Una interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">NO puede heredar de una clase de ninguna manera</strong></p>
+</li>
+<li>
+<p><strong class="green">SI puede heredar de otro interfaz por extensión</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Una clase</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">SI puede heredar de una clase por extensión</strong></p>
+</li>
+<li>
+<p><strong class="gree">SI puede heredar de varios interfaces por implementación</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Herencia mútiple</strong></p>
+</li>
+<li>
+<p><strong class="red">La herencia por extensión NO la permite</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">la herencia por implementación SI la permite</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class &lt;claseDerivada&gt;
   extends &lt;claseBase&gt;
   implements &lt;interfaz1&gt;, …, &lt;interfazN&gt; {
   …
@@ -8457,10 +8489,11 @@ class &lt;claseDerivada&gt;
 interface &lt;interfazDerivado&gt;
   extends &lt;interfaz1&gt;, …, &lt;interfazN&gt; {
   …
-}
-&#8230;&#8203;.</th>
+}</code></pre>
+</div>
+</div></div></td>
 </tr>
-</thead>
+</tbody>
 </table>
 </div>
 <div class="sect2">
@@ -8589,13 +8622,13 @@ interface &lt;interfazDerivado&gt;
 <h3 id="polimorfismo">Polimorfismo</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Definición</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Introducción</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><em class="blue">Ejemplo</em></strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8603,7 +8636,7 @@ interface &lt;interfazDerivado&gt;
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Término de origen griego que significa "muchas formas".</p>
+<p>Término de origen griego que significa <strong class="green">"muchas formas"</strong>.</p>
 </li>
 </ul>
 </div></div></td>
@@ -8628,10 +8661,7 @@ interface &lt;interfazDerivado&gt;
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>no se contempla que algo cambie de formas</p>
-</li>
-<li>
-<p>no se contempla que algo sea dos cosas a la vez</p>
+<p><strong class="red">no</strong> se contempla que algo <strong class="red">cambie de forma</strong> o sea <strong class="red">de dos clases de cosas</strong> a la vez</p>
 </li>
 </ul>
 </div></div></td>
@@ -8653,111 +8683,72 @@ interface &lt;interfazDerivado&gt;
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 15%;">
+<col style="width: 30%;">
+<col style="width: 45%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>A lo largo de la historia, en este mundo existe la jerarquía de personas: mujeres y hombres.</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Pero en ciertos momento y en ciertos países, no existe polimorfismo: el lugar de una mujer no lo puede ocupar un hombre y el de un hombre no lo puede ocupar una mujer.</em></p>
+</li>
+<li>
+<p><em>Mientras que, en otros momentos u otros países, el lugar de una persona es indiferentemente ocupado por una mujer o un hombre.</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Person person;
+ // person = new Person(); ERROR! Clase abstracta
+person = new Woman();
+person = new Man();
+Woman woman;
+ // woman = new Person(); ERROR! Clase abstracta
+woman = new Woman();
+ // woman = new Man(); ERROR! Clase no derivada de Woman
+Man man;
+ // man = new Person(); ERROR! Clase abstracta
+ // man = new Woman(); ERROR! Clase no derivada de Man
+man = new Man();</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>donde no se contempla que una mujer se convierta en hombre o un hombre en mujer</em></p>
+</li>
+<li>
+<p><em>ni se contempla que alguien sea mujer y hombre a la vez;</em></p>
+</li>
+<li>
+<p><em>lo único que se contempla es que una referencia a persona apunte a un objeto de la clase mujer u hombre en cada instante del tiempo</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
 <col style="width: 35%;">
+<col style="width: 35%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top"><strong><span class="blue">Definición</span></strong></th>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplo:</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El polimorfizmo es una relajación del sistema de tipos, de tal manera que una referencia a una clase (atributo,parámetro o declaración local o elemento de un vector) acepta direcciones de objetos de dicha clase y de sus clases derivadas (hija,nieta,&#8230;&#8203;).</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Por tanto:</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>el polimorfizmo exije la existencia de una jerarquía de clacificación;</p>
-</li>
-<li>
-<p>las jerarquías de clasificación <strong>NO</strong> exigen tratamientos polimòrficos;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>En un punto dado, existen listas, en otro punto, existen conjuntos y, en otro punto, pueden existir indiferentemente listas o conjuntos</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/Lista2.svg" alt="Lista2" width="118" height="176">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/Polimorfismo.jpg" alt="height32">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
+<th class="tableblock halign-left valign-top"><strong><em class="blue">Ejemplo</em></strong></th>
 <th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplo:</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>donde un objeto se crea de una clase y siempre será de esa clase mientras que la referencia coleccion puede tener, en un momento dado, una dirección de un objeto lista o de un objeto conjunto</p>
-</li>
-<li>
-<p>con la incorporación del polimorfismo, tiene sentido declarar referencias a clases abstractas con la intención de almacenar direcciones de objetos de clases concretas derivadas, NO de clases abstractas que no son instanciables;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>A lo largo de la historia, en este mundo existe la jerarquía de personas: mujeres y hombres. Pero en ciertos momento y en ciertos países, no existe polimorfismo: el lugar de una mujer no lo puede ocupar un hombre y el de un hombre no lo puede ocupar una mujer. Mientras que, en otros momentos u otros países, el lugar de una persona es indiferentemente ocupado por una mujer o un hombre.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/Persona2.svg" alt="Persona2" width="197" height="201">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Polimorfismo2.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Comportamiento:</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Limitación:</span></strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8765,41 +8756,101 @@ interface &lt;interfazDerivado&gt;
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>donde no se contempla que una mujer se convierta en hombre o un hombre en mujer; ni se contempla que alguien sea mujer y hombre a la vez; lo único que se contempla es que una referencia a persona apunte a un objeto de la clase mujer u hombre</p>
+<p>El polimorfismo es una <strong class="blue">relajación del sistema de tipos</strong>, de tal manera que una <strong class="blue">referencia declarada de una clase</strong> (atributo, parámetro o declaración local o elemento de un vector) <strong class="blue">acepta la asignación de la dirección de un objeto de dicha clase o de alguna de sus clases derivadas</strong> (hija, nieta,&#8230;&#8203;)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Por tanto:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">exije</strong> la existencia de una jerarquía de clacificación mediante <strong class="red">relaciones de herencia</strong></p>
+</li>
+<li>
+<p>pero las <strong class="red">jerarquías de clasificación NO exigen tratamientos polimòrficos</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>cuando se lanza un mensaje a un objeto a travéz de una referencia polimorfica se ejecuta el método prescrito en la clase del objeto que recibe el mensaje</p>
+<p><em>En un punto dado, existen listas, en otro punto, existen conjuntos y, en otro punto, pueden existir indiferentemente listas o conjuntos</em></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><span class="red">Ejemplo:</span></strong></p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Set set;
+ // set = new List(); ERROR!!!
+set = new Set();
+List list;
+list = new List();
+list = new Set();</code></pre>
 </div>
-<div class="paragraph">
-<p><em>En un punto dado, existen listas, en otro punto,existen conjuntos y, en otro punto, pueden existir indiferentemente listas o conjuntos</em></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/Polimorfismo3.jpg" alt="height32"></span></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>cuando se lanza un mensaje a un objeto a travéz de una referencia polimorfica, éste debe estar contemplando en el interfaz de clase de la que se declaró la referencia sin contemplar los pocibles métodos añadidos en la clase del objeto apuntado.</p>
-</div>
-<div class="ulist">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong><span class="red">Ejemplo:</span></strong></p>
+<p>donde <strong class="red">un objeto se crea de una clase y siempre será de esa clase</strong> mientras que la <strong class="red">referencia puede tener, en un momento dado, una dirección de un objeto lista o de un objeto conjunto</strong></p>
+</li>
+<li>
+<p>con la <strong class="red">incorporación del polimorfismo</strong>, tiene sentido <strong class="green">declarar referencias a clases abstractas con la intención de almacenar direcciones de objetos de clases concretas derivadas</strong>, NO de clases abstractas que no son instanciables</p>
 </li>
 </ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">- <strong><span class="blue">Comportamiento:</span></strong></th>
+<th class="tableblock halign-left valign-top">- <strong><span class="red">Limitación:</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cuando <strong class="blue">se lanza un mensaje a un objeto a travéz de una referencia polimorfica se ejecuta el método prescrito en la clase del objeto que recibe el mensaje</strong>, <strong class="red">independientemente de la clase de la declaración de la referencia</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cuando <strong class="blue">se lanza un mensaje a un objeto a travéz de una referencia polimorfica, éste debe estar contemplando en el interfaz de clase de la que se declaró la referencia</strong>, <strong class="red">sin contemplar los posibles métodos añadidos en la clase del objeto apuntado</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">List list;
+list = new List()
+list.insertFirst(5); // con repetición
+list = new Set()
+list.insertFirst(5); // sin repetición</code></pre>
 </div>
-<div class="paragraph">
-<p><em>En un punto dado, existen listas, en otro punto,existen conjuntos y, en otro punto, pueden existir indiferentemente listas o conjuntos</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">List list1 = new Set();
+List list2 = new Set();
+...
+Set set1 = new Set();
+Set set2 = new Set();
+set1.instersection(set2);
+...</code></pre>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="images/Polimorfismo4.jpg" alt="height32"></span></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -8814,7 +8865,7 @@ interface &lt;interfazDerivado&gt;
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top"><strong><span class="blue">Enlace:</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo:</span></strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
 <tbody>
@@ -8822,14 +8873,20 @@ interface &lt;interfazDerivado&gt;
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>es la asociación entre un elemento de un lenguaje de programación y una de sus características;</p>
+<p>es la <strong class="blue">asociación entre un elemento de un lenguaje de programación y una de sus características</strong>;</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><em>una variable y su nombre, su valor, su dirección, su tipo,&#8230;&#8203;; una constante y su nombre, su valor, su dirección, su tipo,&#8230;&#8203;; una expreción y su número de operadores,su valor evaluado, su tipo,&#8230;&#8203;</em></p>
+<p>_una variable y su nombre, su valor, su dirección, su tipo,&#8230;&#8203;;</p>
+</li>
+<li>
+<p>una constante y su nombre, su valor, su dirección, su tipo,&#8230;&#8203;;</p>
+</li>
+<li>
+<p>una expresión y su número de operadores, su valor resultante, su tipo,&#8230;&#8203;_</p>
 </li>
 </ul>
 </div></div></td>
@@ -8838,30 +8895,55 @@ interface &lt;interfazDerivado&gt;
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Tipo de Enlaces:</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo:</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Tipos de Enlace</span></strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong><em>Enlace estático:</em></strong> aquel enlace que se puede resolver analizando el código, o sea, en tiempo de compilación;</p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Enlace estático</strong> es aquel enlace que <strong class="blue">se puede resolver analizando el código</strong>, o sea, en tiempo de compilación;</p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>una variable y su nombre, su tipo,&#8230;&#8203;; una constante y su nombre  su valor, su tipo,&#8230;&#8203;;una expreción y su número de operadores, su tipo,&#8230;&#8203;</em></p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>una variable y su nombre, su tipo,&#8230;&#8203;</em></p>
+</li>
+<li>
+<p><em>una constante y su nombre  su valor, su tipo,&#8230;&#8203;</em></p>
+</li>
+<li>
+<p><em>una expreción y su número de operadores, su tipo,&#8230;&#8203;</em></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong><em>Enlase dinámico:</em></strong> aquel enlace que <strong>NO</strong> se puede resolver analizando el código sino que se resuelve en tiempo de ejecución;</p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Enlase dinámico</strong> es aquel enlace que <strong class="red">NO se puede resolver analizando el código sino que se resuelve en tiempo de ejecución</strong>;</p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>una varuiable y su valor,&#8230;&#8203;; una expreción y su valor evaluado</em></p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>una variable y su valor, &#8230;&#8203;</em></p>
+</li>
+<li>
+<p><em>una expresión y su valor evaluado</em></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -8874,8 +8956,8 @@ interface &lt;interfazDerivado&gt;
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Polimorfizmo:</span></strong></th>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="red">Ejemplos</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Polimorfismo</span></strong></th>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Ejemplos</em></th>
 </tr>
 </thead>
 <tbody>
@@ -8883,22 +8965,26 @@ interface &lt;interfazDerivado&gt;
 <td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>es un enlace dinámico entre una referencia y una clase de objeto apuntado por la referencia;</p>
+<p>es un <strong class="blue">enlace dinámico entre una referencia y una clase de objeto apuntado por la referencia</strong>;</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Lista coleccion;
-…
-… coleccion …</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">Lista collection;
+...
+collection = new ...;
+...
+... collection ...</code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Persona persona;
-…
-… persona …</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">Person person;
+...
+person = new ...
+...
+... person ...</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8923,13 +9009,13 @@ interface &lt;interfazDerivado&gt;
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top"><strong><span class="blue">Sobrecarga</span></strong></th>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplos</span></strong></th>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Ejemplos</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>es un enlace estático entre un mensaje y el método que se ejecuta;</p>
+<p>es un <strong class="blue">enlace estático entre un mensaje y el método que se ejecuta</strong>;</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
@@ -9007,6 +9093,34 @@ b = a.m(a, c);
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 85%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/ust_figures/tree/main/ust3_design/ust3_objectOriented/ust4_how/ust3_flexibility/ust1_liskovs_sustitution/ust2_bad/src/main/java">figures</a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu">menus</a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu_undo_redo">menus_undo/redo</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/menus.svg" alt="menus" width="1269" height="1365">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -9075,38 +9189,6 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
                                           // EJECUCION</code></pre>
 </div>
 </div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 85%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu">menus</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/menus.svg" alt="menus" width="1269" height="1365">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu_undo_redo">menus_undo/redo</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -12557,7 +12639,7 @@ public TreeMap(SortedMap&lt;K,? extends V&gt; m)</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-10-23 11:41:44 UTC
+Last updated 2023-10-30 11:51:48 UTC
 </div>
 </div>
 </body>
