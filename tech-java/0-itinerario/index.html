@@ -8129,52 +8129,6 @@ class Hija extends Padre {
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="clase-object">Clase <em>Object</em></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">Toda clase "no derivada" explícitamente hereda implícitamente de la clase predefinida <em>Object</em></span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Proporciona un conjunto de <strong class="blue">métodos comunes a todas las clases</strong>, algunos de ellos <span class="blue">susceptibles de ser redefinidos</span> en cualquier clase de la manera oportuna.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>además, métodos para la <span class="blue">sincronización</span> de programas concurrentes y para usar la <span class="blue">reflexión</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Object {
-  public boolean equals(Object)
-  public String toString()
-  public int hashCode()
-  protected Object clone()
-  protected void finalize()
-  ...
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
 <h3 id="clases-abstractas">Clases Abstractas</h3>
@@ -9192,6 +9146,52 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </tr>
 </tbody>
 </table>
+<div class="sect3">
+<h4 id="clase-object">Clase <em>Object</em></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Toda clase "no derivada" explícitamente hereda implícitamente de la clase predefinida <em>Object</em></span></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Proporciona un conjunto de <strong class="blue">métodos comunes a todas las clases</strong>, algunos de ellos <span class="blue">susceptibles de ser redefinidos</span> en cualquier clase de la manera oportuna.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>además, métodos para la <span class="blue">sincronización</span> de programas concurrentes y para usar la <span class="blue">reflexión</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">class Object {
+  public boolean equals(Object)
+  public String toString()
+  public int hashCode()
+  protected Object clone()
+  protected void finalize()
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -12639,7 +12639,7 @@ public TreeMap(SortedMap&lt;K,? extends V&gt; m)</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-10-30 11:51:48 UTC
+Last updated 2023-10-30 12:24:03 UTC
 </div>
 </div>
 </body>
