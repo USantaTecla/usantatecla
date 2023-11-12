@@ -472,8 +472,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#vista-privada-de-las-clases">Vista Privada de las Clases</a></li>
 <li><a href="#vista-privada-de-los-objetos">Vista Privada de los Objetos</a></li>
 <li><a href="#miembros-de-clase">Miembros de Clase</a></li>
-<li><a href="#cadenas-de-caracteres">Cadenas de Caracteres</a></li>
 <li><a href="#clases-de-recubrimiento">Clases de Recubrimiento</a></li>
+<li><a href="#cadenas-de-caracteres">Cadenas de Caracteres</a></li>
 <li><a href="#enumerados">Enumerados</a></li>
 </ul>
 </li>
@@ -1110,12 +1110,12 @@ cualquier sistema operativo</p>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 60%;">
 <col style="width: 40%;">
+<col style="width: 60%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>Un <strong class="blue">programa</strong> se compone de <strong class="blue">paquetes</strong> que se componen de otros paquetes y <strong class="blue">clases</strong>, bajo el <strong class="red">paradigma de la programación modular</strong></p>
@@ -1155,6 +1155,17 @@ cualquier sistema operativo</p>
 </ul>
 </div>
 </li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/como.svg" alt="como" width="1225" height="994">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
 <p>Las sentencias pueden ser <strong class="blue">compuestas</strong>, bajo el <strong class="red">paradigma de la programación estructurada</strong></p>
 <div class="ulist">
@@ -1174,6 +1185,10 @@ cualquier sistema operativo</p>
 </ul>
 </div>
 </li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
 <p>Los datos, <strong class="blue">constantes</strong> o <strong class="blue">variables</strong>, pueden ser de <strong class="blue">tipo</strong></p>
 <div class="ulist">
@@ -1191,11 +1206,6 @@ cualquier sistema operativo</p>
 </div>
 </li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaItinerario.svg" alt="diagramaItinerario">
-</div>
 </div></div></td>
 </tr>
 </tbody>
@@ -4366,16 +4376,13 @@ cualquier sistema operativo</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">atributos</strong>, variables o constantes o colecciones de éstos u otros objetos cuyos valores determinan las características del <strong class="blue">concepto, módulo, unidad</strong>, &#8230;&#8203;</p>
+<p><strong class="blue">atributos</strong>, variables o constantes o colecciones de éstos u otros objetos cuyos valores determinan las características de la <strong class="blue">clase, tipo, tipo de entidad, concepto, unidad</strong>, &#8230;&#8203;</p>
 </li>
 <li>
-<p>y <strong class="blue">métodos</strong>, algoritmos disponibles para manipular (añadir, eliminar, modificar, consultar) las características del <strong class="blue">concepto, módulo, unidad</strong>, &#8230;&#8203;</p>
+<p>y <strong class="blue">métodos</strong>, algoritmos disponibles para manipular (añadir, eliminar, modificar, consultar) las características de la <strong class="blue">clase, tipo, tipo de entidad, concepto, unidad</strong>, &#8230;&#8203;</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Debe respetar los principios de diseño de <strong class="green">alta cohesión, bajo acoplamiento y pequeño tamaño del diseño modular</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -5450,6 +5457,31 @@ private Interval clone() {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Resumen de Implantación de Clases</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in ust4_how/ust4_object_based/ust3_classes_private_view/ust5_private_methods.adoc - include::../../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a3_basadaObjetos/a1_clazz/App.java[]</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in ust4_how/ust4_object_based/ust3_classes_private_view/ust5_private_methods.adoc - include::../../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a3_basadaObjetos/a1_method/App.java[]</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
 <col style="width: 33.3334%;">
@@ -6424,8 +6456,6 @@ private Intervalo copia() {
 </tr>
 </tbody>
 </table>
-<div class="sect3">
-<h4 id="atributos-y-métodos-estáticos">Atributos y Métodos Estáticos</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -6528,9 +6558,6 @@ private Intervalo copia() {
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect3">
-<h4 id="código-estático">Código estático</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 35%;">
@@ -6539,9 +6566,9 @@ private Intervalo copia() {
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Código estático</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Sintaxis</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
 <tbody>
@@ -6549,10 +6576,10 @@ private Intervalo copia() {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>sirve para la inicialización de los atributos estáticos cuando la inicialización posible no alcanza sus objetivos;</p>
+<p>sirve para la <span class="blue">inicialización de los atributos estáticos</span> cuando la <span class="red">expresión de inicialización no alcanza sus objetivos</span> y <span class="blue">requiere la ejecución de sentencias</span></p>
 </li>
 <li>
-<p>se ejecutan en cualquier orden en el comienzo de la ejecución del programa;</p>
+<p>se <span class="blue">ejecutan al comienzo de la ejecución del programa</span>, secuencialmente dentro de cada fichero y en cualquier orden entre distintos ficheros</p>
 </li>
 </ul>
 </div></div></td>
@@ -6577,17 +6604,69 @@ static {
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect3">
-<h4 id="clases-de-utilidad">Clases de Utilidad</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">En librerías y proyectos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Método <em>main</em></strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>public static void main(String[] args)&lt;1&gt; {
+
+}
+&lt;1&gt; método del que parte la ejecución, presente en las clases "principales"</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Ejecución</strong></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>c:\&gt;java Clase param1 param2<b class="conum">(1)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>args[0].equals("param1") &amp;&amp; args[1].equals("param2")</p>
+</li>
+</ol>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in ust4_how/ust4_object_based/ust5_static.adoc - include::../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a3_basadaObjetos/a4_main/Clazz.java[]</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Clases de Utilidad</strong></th>
 <th class="tableblock halign-left valign-top"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html"><em>System</em></a></th>
 </tr>
 </thead>
@@ -6596,8 +6675,9 @@ static {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Son clases que reúnen un <strong class="blue">conjunto cohesivo de métodos estáticos</strong>, &#8230;&#8203; <span class="red">cajón de-sastre</span></p>
-</li>
+<p>son clases que reúnen un <strong class="blue">conjunto cohesivo de métodos estáticos</strong>, &#8230;&#8203; <span class="red">cajón de-sastre</span> dentro de la <strong class="blue">librería o proyecto</strong></p>
+<div class="ulist">
+<ul>
 <li>
 <p><strong class="blue">Suelen no ser instanciables</strong> porque no responden al concepto habitual de clases de objetos</p>
 <div class="ulist">
@@ -6609,16 +6689,27 @@ static {
 </div>
 </li>
 </ul>
+</div>
+</li>
+</ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class System {
-  public static long currentTimeMillis() { ...}
-  public static long nanoTime() { ...}
-  public static void exit(int) { ...}
-  public static void gc() { ...}
-}</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">public static void gc() {}<b class="conum">(1)</b>
+public static void exit(int) {}<b class="conum">(2)</b>
+public static long nanoTime() {}
+public static long currentTimeMillis() {}</code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p><em>garbage collector</em>, invoca el recolector de basura que libera la memoria de todo objeto no referenciado; se llama automáticamente cuando el procesador está ocioso por interrupción de entrada/salida, &#8230;&#8203;</p>
+</li>
+<li>
+<p>invoca la salida incondicional del programa comunicando un código de error</p>
+</li>
+</ol>
 </div></div></td>
 </tr>
 </tbody>
@@ -6700,363 +6791,17 @@ public static double scalb(double, int)
 public static float scalb(float, int)
 ...</code></pre>
 </div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="cadenas-de-caracteres">Cadenas de Caracteres</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 17%;">
-<col style="width: 39%;">
-<col style="width: 44%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Definición</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Constantes, inmutables</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Variables, mutables</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Son <strong class="blue">secuencias de caracteres de cualquier longitud</strong>, incluso <strong class="blue">secuencia vacía</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>cuyos caracteres no varían tras la creación</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Implementadas bajo la clase  <strong class="blue">String</strong> <span class="red">sin contemplar métodos que modifiquen el estado del objeto</span>.</p>
-</li>
-<li>
-<p><em>Ej. El nombre de una persona, de un mes, de una universidad, de un proyecto, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>cuyos caracteres sí varían tras la creación</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Implementadas bajo las clases <strong class="blue">StringBuffer</strong> (con sincronización en concurrencia) y <strong class="blue">StringBuilder</strong> (sin) <span class="red">con métodos que contemplan la modificación del objeto</span></p>
-</li>
-<li>
-<p><em>Ej. Membrete de una carta, párrafo de aviso, clausula de contrato, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect3">
-<h4 id="clase-string">Clase <em>String</em></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html"><em>String</em></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public String()
-public String(String)
-public String(char[])
-public String(char[], int, int)
-public String(int[], int, int)
-public String(byte[], int, int, int)
-public String(byte[], int)
-public String(byte[], int, int)
-public String(byte[])
-public String(StringBuffer)
-public String(StringBuilder)
-public int length()
-public boolean isEmpty()
-public char charAt(int)
-public byte[] getBytes()
-public char[] toCharArray()
-public String toString()
-public void getChars(int, int, char[], int)
-public void getBytes(int, int, byte[], int)
-
-public CharSequence subSequence(int,int)
-public String substring(int)
-public String substring(int, int)
-
-public int hashCode()
-public int indexOf(String)
-public int indexOf(String, int)
-public int indexOf(int)
-public int indexOf(int, int)
-public int lastIndexOf(String)
-public int lastIndexOf(String, int)
-public int lastIndexOf(int)
-public int lastIndexOf(int, int)</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public int codePointAt(int)
-public int codePointBefore(int)
-public int codePointCount(int, int)
-public int offsetByCodePoints(int, int)
-
-public boolean equals(Object)
-public boolean equalsIgnoreCase(String)
-public boolean contentEquals(StringBuffer)
-public boolean matches(String)
-public boolean regionMatches(int,String, int, int)
-public boolean regionMatches(boolean,int, String,int, int)
-public boolean startsWith(String, int)
-public boolean startsWith(String)
-public boolean endsWith(String)
-public int compareTo(String)
-public int compareToIgnoreCase(String)
-public String[] split(String)
-public String[] split(String, int)
-
-public String concat(String)
-public String replace(char, char)
-public String replaceFirst(String, String)
-public String replaceAll(String, String)
-public String toLowerCase()
-public String toUpperCase()
-public String trim()</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">void getBytes(int srcBegin, int srcEnd,
-  byte[] dst, int dstBegin)</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">void getChars(int srcBegin, int srcEnd,
-  char[] dst, int dstBegin)</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public static String valueOf(char)
-public static String valueOf(int)
-public static String valueOf(long)
-public static String valueOf(char[])
-public static String copyValueOf(char[])</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public static String valueOf(float)
-public static String valueOf(double)
-public static String valueOf(boolean)
-public static String valueOf(char[], int, int)
-public static String copyValueOf(char[],int, int)</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="clase-stringbuffer-y-stringbuilder">Clase <em>StringBuffer</em> y <em>StringBuilder</em></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 46%;">
-<col style="width: 54%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Clases</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html"><em>StringBuffer</em></a> y <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html"><em>StringBuilder</em></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public StringBuffer()
-public StringBuffer(int)
-public StringBuffer(String)
-public StringBuffer(CharSequence)
-
-public int length()
-public char charAt(int)
-public String substring(int)
-public String substring(int, int)
-public CharSequence subSequence(int,int)
-public String toString()
-
-public int indexOf(String)
-public int indexOf(String, int)
-public int lastIndexOf(String)
-public int lastIndexOf(String, int)
-
-public int codePointAt(int)
-public int codePointBefore(int)
-public int codePointCount(int, int)
-public int offsetByCodePoints(int, int)
-
-public int capacity()
-public void ensureCapacity(int)
-public void setLength(int)
-public void trimToSize()
-public void getChars(int, int, char[], int)</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public StringBuffer append(String)
-public StringBuffer append(StringBuffer)
-public StringBuffer append(char[])
-public StringBuffer append(char[], int, int)
-public StringBuffer append(boolean)
-public StringBuffer append(char)
-public StringBuffer append(int)
-public StringBuffer appendCodePoint(int)
-public StringBuffer append(long)
-public StringBuffer append(float)
-public StringBuffer append(double)
-
-public StringBuffer insert(int, char[], int,int)
-public StringBuffer insert(int, String)
-public StringBuffer insert(int, char[])
-public StringBuffer insert(int, boolean)
-public StringBuffer insert(int, char)
-public StringBuffer insert(int, int)
-public StringBuffer insert(int, long)
-public StringBuffer insert(int, float)
-public StringBuffer insert(int, double)
-
-public StringBuffer delete(int, int)
-public StringBuffer deleteCharAt(int)
-
-public void setCharAt(int, char)
-public StringBuffer replace(int, int, String)
-public StringBuffer reverse()
-...</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="literales-string-2">Literales <em>String</em></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>es la única clase cuyos objetos pueden presentarse en forma literal;</p>
-</li>
-<li>
-<p>su formato es una secuencia de caracteres de cualquier longitud encerrados entre dobles comillas</p>
-</li>
-</ul>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>"&lt;caracter&gt;..."</pre>
-</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>son objetos de la clase <strong>String</strong> cuya evaluación devuelve la dirección del objeto al que representan;</p>
-</li>
-<li>
-<p>además, es la única clase que disfruta de un operador (<strong>+</strong>) para la concatenación de cadenas de caracteres y combinado con cualquier tipo.</p>
+<p><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StrictMath.html"><em>StrictMathMath</em></a>: con la misma interfaz pública y una implementación independiente de la máquina, sin cálculos nativos, <span class="red">menos eficiente</span> que <em>Math</em>, la cual es <span class="red">menos portable</span></p>
 </li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">int longitud = "caracteres".length();
-String cadena = new String("caracteres");
-boolean falso = cadena == "caracteres";
-boolean cierto = cadena.equals("caracteres");
-boolean tambien = "caracteres".equals(cadena);
-StringBuffer buffer = new StringBuffer(cadena);
-buffer.insert(0, "de ").insert(0, "cadena ");
-boolean si = ("cadena de " + cadena).
-    contentEquals(buffer);
-String serie = (0+1)+", "+(1+1)+","+(2+1)+".";</code></pre>
-</div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-initialsv0">3-initials/v0.0</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v0_0/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v1_0/App.java">v1.0</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#2-morsetranlator">2-texts/2-morseTranlator/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a2_morseTranslator/v0_0/App.java">v0.0</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
 <h3 id="clases-de-recubrimiento">Clases de Recubrimiento</h3>
@@ -7253,6 +6998,349 @@ public String toString() {
 ...</code></pre>
 </div>
 </div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="cadenas-de-caracteres">Cadenas de Caracteres</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 17%;">
+<col style="width: 39%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Definición</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Constantes, inmutables</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Variables, mutables</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son <strong class="blue">secuencias de caracteres de cualquier longitud</strong>, incluso <strong class="blue">secuencia vacía</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cuyos caracteres no varían tras la creación</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementadas bajo la clase  <strong class="blue">String</strong> <span class="red">sin contemplar métodos que modifiquen el estado del objeto</span>.</p>
+</li>
+<li>
+<p><em>Ej. El nombre de una persona, de un mes, de una universidad, de un proyecto, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cuyos caracteres sí varían tras la creación</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementadas bajo las clases <strong class="blue">StringBuffer</strong> (con sincronización en concurrencia) y <strong class="blue">StringBuilder</strong> (sin) <span class="red">con métodos que contemplan la modificación del objeto</span></p>
+</li>
+<li>
+<p><em>Ej. Membrete de una carta, párrafo de aviso, clausula de contrato, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html"><em>String</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public String()
+public String(String)
+public String(char[])
+public String(char[], int, int)
+public String(int[], int, int)
+public String(byte[], int, int, int)
+public String(byte[], int)
+public String(byte[], int, int)
+public String(byte[])
+public String(StringBuffer)
+public String(StringBuilder)
+public int length()
+public boolean isEmpty()
+public char charAt(int)
+public byte[] getBytes()
+public char[] toCharArray()
+public String toString()
+public void getChars(int, int, char[], int)
+public void getBytes(int, int, byte[], int)
+
+public CharSequence subSequence(int,int)
+public String substring(int)
+public String substring(int, int)
+
+public int hashCode()
+public int indexOf(String)
+public int indexOf(String, int)
+public int indexOf(int)
+public int indexOf(int, int)
+public int lastIndexOf(String)
+public int lastIndexOf(String, int)
+public int lastIndexOf(int)
+public int lastIndexOf(int, int)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public int codePointAt(int)
+public int codePointBefore(int)
+public int codePointCount(int, int)
+public int offsetByCodePoints(int, int)
+
+public boolean equals(Object)
+public boolean equalsIgnoreCase(String)
+public boolean contentEquals(StringBuffer)
+public boolean matches(String)
+public boolean regionMatches(int,String, int, int)
+public boolean regionMatches(boolean,int, String,int, int)
+public boolean startsWith(String, int)
+public boolean startsWith(String)
+public boolean endsWith(String)
+public int compareTo(String)
+public int compareToIgnoreCase(String)
+public String[] split(String)
+public String[] split(String, int)
+
+public String concat(String)
+public String replace(char, char)
+public String replaceFirst(String, String)
+public String replaceAll(String, String)
+public String toLowerCase()
+public String toUpperCase()
+public String trim()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">void getBytes(int srcBegin, int srcEnd,
+  byte[] dst, int dstBegin)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">void getChars(int srcBegin, int srcEnd,
+  char[] dst, int dstBegin)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public static String valueOf(char)
+public static String valueOf(int)
+public static String valueOf(long)
+public static String valueOf(char[])
+public static String copyValueOf(char[])</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public static String valueOf(float)
+public static String valueOf(double)
+public static String valueOf(boolean)
+public static String valueOf(char[], int, int)
+public static String copyValueOf(char[],int, int)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 46%;">
+<col style="width: 54%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Clases</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html"><em>StringBuffer</em></a> y <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html"><em>StringBuilder</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public StringBuffer()
+public StringBuffer(int)
+public StringBuffer(String)
+public StringBuffer(CharSequence)
+
+public int length()
+public char charAt(int)
+public String substring(int)
+public String substring(int, int)
+public CharSequence subSequence(int,int)
+public String toString()
+
+public int indexOf(String)
+public int indexOf(String, int)
+public int lastIndexOf(String)
+public int lastIndexOf(String, int)
+
+public int codePointAt(int)
+public int codePointBefore(int)
+public int codePointCount(int, int)
+public int offsetByCodePoints(int, int)
+
+public int capacity()
+public void ensureCapacity(int)
+public void setLength(int)
+public void trimToSize()
+public void getChars(int, int, char[], int)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public StringBuffer append(String)
+public StringBuffer append(StringBuffer)
+public StringBuffer append(char[])
+public StringBuffer append(char[], int, int)
+public StringBuffer append(boolean)
+public StringBuffer append(char)
+public StringBuffer append(int)
+public StringBuffer appendCodePoint(int)
+public StringBuffer append(long)
+public StringBuffer append(float)
+public StringBuffer append(double)
+
+public StringBuffer insert(int, char[], int,int)
+public StringBuffer insert(int, String)
+public StringBuffer insert(int, char[])
+public StringBuffer insert(int, boolean)
+public StringBuffer insert(int, char)
+public StringBuffer insert(int, int)
+public StringBuffer insert(int, long)
+public StringBuffer insert(int, float)
+public StringBuffer insert(int, double)
+
+public StringBuffer delete(int, int)
+public StringBuffer deleteCharAt(int)
+
+public void setCharAt(int, char)
+public StringBuffer replace(int, int, String)
+public StringBuffer reverse()
+...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Literales <em>String</em></strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>es la única clase cuyos objetos pueden presentarse en forma literal;</p>
+</li>
+<li>
+<p>su formato es una secuencia de caracteres de cualquier longitud encerrados entre dobles comillas</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"&lt;caracter&gt;..."</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>son objetos de la clase <strong>String</strong> cuya evaluación devuelve la dirección del objeto al que representan;</p>
+</li>
+<li>
+<p>además, es la única clase que disfruta de un operador (<strong>+</strong>) para la concatenación de cadenas de caracteres y combinado con cualquier tipo.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int longitud = "caracteres".length();
+String cadena = new String("caracteres");
+boolean falso = cadena == "caracteres";
+boolean cierto = cadena.equals("caracteres");
+boolean tambien = "caracteres".equals(cadena);
+StringBuffer buffer = new StringBuffer(cadena);
+buffer.insert(0, "de ").insert(0, "cadena ");
+boolean si = ("cadena de " + cadena).
+    contentEquals(buffer);
+String serie = (0+1)+", "+(1+1)+","+(2+1)+".";</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-initialsv0">3-initials/v0.0</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v0_0/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v1_0/App.java">v1.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#2-morsetranlator">2-texts/2-morseTranlator/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a2_morseTranslator/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -9377,7 +9465,7 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Clasificadores en paquetes</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Declaración de paquete</strong></th>
 <th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
@@ -9528,7 +9616,8 @@ class CMover {
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Acceso a las clases</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Acceso a las clases</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="red">Prohibido acceso a las clases</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9536,20 +9625,20 @@ class CMover {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">acceder a las clases con visibilidad pública de un paquete desde la implementación de una clase de otro paquete, requiere la importación de dichas clases</strong></p>
+<p><span class="blue">con <strong>visibilidad pública</strong> desde otra clase de <strong>otro paquete</strong>, con la <strong>importación</strong> correspondiente</span></p>
 </li>
 <li>
-<p><strong class="green">acceder a las clases del mismo paquete no tiene ninguna implicación</strong></p>
+<p><span class="blue">con <strong>cualquier visibilidad</strong> desde otra clase del <strong>mismo paquete</strong>, <strong>sin importación</strong></span></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="red">acceder a las clases con visibilidad de paquete desde una clase de otro paquete está prohibido</strong></p>
+<p><span class="red">con <strong>visibilidad de paquete</strong> desde otra clase de <strong>otro paquete</strong></span></p>
 </li>
 <li>
-<p><strong class="red">acceder a las clases del paquete por defecto desde una clase de otro paquete está prohibido</strong></p>
+<p><span class="red"><strong>del paquete por defecto</strong> desde otra clase de <strong>otro paquete</strong></span></p>
 </li>
 </ul>
 </div></div></td>
@@ -9558,12 +9647,12 @@ class CMover {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 35%;">
+<col style="width: 65%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Importación explícita</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Importación</strong></th>
 <th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
@@ -9572,7 +9661,7 @@ class CMover {
 <td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Para <span class="blue">acceder a una clase con visibilidad pública declarada en un paquete desde una clase de otro paquete</span>, debe usarse la <strong class="blue">sentencia de importación <em>import</em></strong> de un único tipo, <span class="blue">especificando el nombre completamente calificado de la clase</span> a la que se desea acceder</p>
+<p><strong class="blue">Importación explícita</strong>: para <span class="blue">acceder a una clase con visibilidad pública declarada en un paquete desde una clase de otro paquete</span>, debe usarse la <strong class="blue">sentencia de importación <em>import</em></strong> de un único tipo, <span class="blue">especificando el nombre completamente calificado de la clase</span> a la que se desea acceder</p>
 <div class="ulist">
 <ul>
 <li>
@@ -9615,25 +9704,11 @@ public class CAbrir {
 </div>
 </div></div></td>
 </tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Importación bajo demanda</strong></th>
-<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Cuando se usan <strong class="blue">muchas clases de un mismo paquete, se pueden importar todas las clases del paquete</strong>, mediante la sentencia de importación <strong>import</strong> de tipos bajo demanda con la <strong class="blue">notación</strong> *</p>
+<p><strong class="blue">Importación bajo demanda</strong>: cuando se usan <strong class="blue">muchas clases de un mismo paquete, se pueden importar todas las clases del paquete</strong>, mediante la sentencia de importación <strong>import</strong> de tipos bajo demanda con la <strong class="blue">notación</strong> *</p>
 </li>
 </ul>
 </div>
@@ -9659,25 +9734,11 @@ class CMover {
 </div>
 </div></div></td>
 </tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Importación implícita</strong></th>
-<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>El código fuente de <strong class="blue">cualquier fichero de un paquete importa implícitamente el resto de su propio paquete</strong>, por lo que todas las clases definidas en un paquete están disponibles para todas las clases de ese mismo paquete</p>
+<p><strong class="blue">Importación implícita</strong>: el código fuente de <strong class="blue">cualquier fichero de un paquete importa implícitamente el resto de su propio paquete</strong>, por lo que todas las clases definidas en un paquete están disponibles para todas las clases de ese mismo paquete</p>
 </li>
 </ul>
 </div></div></td>
@@ -9700,13 +9761,13 @@ public class CAbrir {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 35%;">
+<col style="width: 30%;">
+<col style="width: 35%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Colisión de nombres</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="red">Colisión de nombres</strong></th>
 <th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
@@ -9735,29 +9796,15 @@ import java.sql.*;
 </div>
 </div></div></td>
 </tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Resolución de Colisión de nombres</strong></th>
-<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Para resolver colisiones al utilizar clases con el mismo nombre que pertenecen a paquetes distintos, se <strong class="green">debe usar el nombre completamente calificado de la clase en todas sus ocurrencias</strong></p>
+<p><strong class="blue">Resolución de Colisión de nombres</strong>: se <strong class="green">debe usar el nombre completamente calificado de la clase en todas sus ocurrencias</strong></p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">…
 java.util.Date fechaUtil = new java.util.Date();
@@ -9784,20 +9831,20 @@ java.sql.Date fechaSql = new java.sql.Date();
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Los <span class="blue">miembros declarados <em>public</em> son accesibles desde cualquier código exterior al paquete</span></p>
+<p>Los <span class="blue">miembros declarados <strong><em>public</em></strong> son accesibles desde cualquier código exterior al paquete</span></p>
 </li>
 <li>
-<p>Los <span class="blue">miembros declarados <em>private</em> sólo son accesibles desde el código de esa clase</span></p>
+<p>Los <span class="blue">miembros declarados <strong><em>private</em></strong> sólo son accesibles desde el código de esa clase</span></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Los <span class="blue">miembros declarados <em>protected</em> son accesibles desde el código de esa clase, de sus clases derivadas de cualquier paquete, y del resto de clases de ese paquete</span> (no de sus subpaquetes)</p>
+<p>Los <span class="blue">miembros declarados <strong><em>protected</em></strong> son accesibles desde el código de esa clase, de sus clases derivadas de cualquier paquete, y del resto de clases de ese paquete</span> (no de sus subpaquetes)</p>
 </li>
 <li>
-<p>Los miembros que <span class="blue">no especifican ningún modificador de acceso sólo son accesibles desde las clases de ese paquete</span> (no de sus subpaquetes)</p>
+<p>Los <span class="blue">miembros que <strong class="blue">no especifican ningún modificador</strong> de acceso sólo son accesibles desde las clases de ese paquete</span> (no de sus subpaquetes)</p>
 </li>
 </ul>
 </div></div></td>
@@ -9816,7 +9863,7 @@ java.sql.Date fechaSql = new java.sql.Date();
 <p><em class="blue">protected</em></p>
 </li>
 <li>
-<p><span class="blue">ninguno</span></p>
+<p><span class="red">ninguno</span></p>
 </li>
 <li>
 <p><em class="blue">private</em></p>
@@ -10060,6 +10107,37 @@ publicMethod of DerivatedClass</code></pre>
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">Menús</a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a4_extends/a4_modelDynamicMenu">whitoutPackages</a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a5_package">withPackages</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/1.0.basic">TicTacToe</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic/src/main/java/usantatecla">Models</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/documentView/basic/src/main/java/usantatecla">ModelsViews</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="api-de-j2se">API de J2SE</h3>
@@ -10070,7 +10148,7 @@ publicMethod of DerivatedClass</code></pre>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Biblioteca estandar</strong> (<strong class="blue"><em><a href="https://docs.oracle.com/javase/6/docs/api/">Application Programming Interface</a></em></strong>)</th>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Biblioteca estandar</strong> (<strong class="blue"><em><a href="https://docs.oracle.com/javase/8/docs/api/">Application Programming Interface</a></em></strong>)</th>
 </tr>
 </thead>
 <tbody>
@@ -10078,13 +10156,16 @@ publicMethod of DerivatedClass</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue"><em>java.lang</em></strong>: clases básicas del lenguaje, este paquete es importado implícitamente por cualquier código</p>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html"><em>java.lang</em></a></strong>: clases básicas del lenguaje, recubrimientos, &#8230;&#8203; <span class="red">importado implícitamente por cualquier proyecto</span></p>
 </li>
 <li>
-<p><strong class="blue"><em>java.util</em></strong>: estructuras de datos y utilidades</p>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/package-summary.html"><em>java.util</em></a></strong>: utilidades y <span class="green">estructuras de datos</span></p>
 </li>
 <li>
-<p><strong class="blue"><em>java.io</em></strong>: acceso a ficheros</p>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html"><em>java.time</em></a></strong>: <span class="blue">calendario</span>, <span class="red">desaprobando <em>java.util.Calendar</em>, <em>java.util.Date</em>, &#8230;&#8203;</span></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html"><em>java.io</em></a></strong>: acceso a ficheros</p>
 </li>
 <li>
 <p><strong class="blue"><em>java.awt, javax.swing</em></strong>: interfaces gráficas de usuario</p>
@@ -10134,13 +10215,13 @@ publicMethod of DerivatedClass</code></pre>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 38%;">
+<col style="width: 62%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+<th class="tableblock halign-left valign-top"><span class="blue"><a href="https://docs.oracle.com/javase/6/docs/api/java/util/Random.html">Clase <em>java.util.Random</em></a></span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
 <tbody>
@@ -10148,18 +10229,209 @@ publicMethod of DerivatedClass</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="">Menús</a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a4_extends/a4_modelDynamicMenu">whitoutPackages</a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a5_package">withPackages</a></p>
+<p>implantación <span class="green">más eficiente y menos sesgada, más aleatoria</span>, que <em>Math.random()</em></p>
 </li>
 </ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Random() {}
+Random(long seed) {}
+int nextInt(int top)<b class="conum">(1)</b>
+int nextInt()
+long nextLong()
+float nextFloat()
+double nextDouble()
+double nextGaussian()
+boolean nextBoolean()
+void nextBytes(byte[] bytes)
+void setSeed(long seed)<b class="conum">(2)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>genera valores de 0 a <em>top</em></p>
+</li>
+<li>
+<p>establece una semilla a partir de la cual generar los siguientes valores aleatorios, habitualmente alimentado con <em>System.currentTimeMillis()</em></p>
+</li>
+</ol>
 </div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in ust4_how/ust6_modular/ust6_api_j2ee.adoc - include::../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a6_packages/a2_random/App.java[]</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Clases de Expresiones Regulares</span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"></code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in ust4_how/ust6_modular/ust6_api_j2ee.adoc - include::../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a6_packages/a1_regExp/App.java[]</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Clases de Calendario</span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/1.0.basic">TicTacToe</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic/src/main/java/usantatecla">Models</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/documentView/basic/src/main/java/usantatecla">ModelsViews</a></p>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html"><em>java.time.LocalDateTime</em></a></strong></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>int getYear()
+LocalDateTime plusYears(long years)
+LocalDateTime minusYears(long years)
+LocalDateTime withYear(int year)
+Month getMonth()
+int getMonthValue()
+LocalDateTime plusMonths(long months)
+LocalDateTime minusMonths(long months)
+LocalDateTime withDayOfMonth(int dayOfMonth)
+LocalDateTime withMonth(int month)
+LocalDateTime plusWeeks(long weeks)
+LocalDateTime minusWeeks(long weeks)
+int getDayOfMonth()
+DayOfWeek getDayOfWeek()
+int getDayOfYear()
+LocalDateTime plusDays(long days)
+LocalDateTime minusDays(long days)
+LocalDateTime withDayOfYear(int dayOfYear)
+int getHour()
+LocalDateTime plusHours(long hours)
+LocalDateTime minusHours(long hours)
+LocalDateTime withHour(int hour)
+int getMinute()
+LocalDateTime plusMinutes(long minutes)
+LocalDateTime minusMinutes(long minutes)
+LocalDateTime withMinute(int minute)
+int getSecond()
+LocalDateTime plusSeconds(long seconds)
+LocalDateTime minusSeconds(long seconds)
+LocalDateTime withSecond(int second)
+int getNano()
+LocalDateTime plusNanos(long nanos)
+LocalDateTime minusNanos(long nanos)
+LocalDateTime withNano(int nanoOfSecond)
+LocalDateTime plus(long amountToAdd, TemporalUnit unit)
+LocalDateTime minus(long amountToSubtract, TemporalUnit unit)
+LocalDateTime plus(TemporalAmount amountToAdd)
+LocalDateTime minus(TemporalAmount amountToSubtract)
+LocalDateTime with(TemporalAdjuster adjuster)
+LocalDateTime with(TemporalField field, long newValue)
+long getLong(TemporalField field)
+boolean isAfter(LocalDateTime other)
+boolean isBefore(LocalDateTime other)
+LocalDate toLocalDate()
+LocalTime toLocalTime()
+static LocalDateTime now()
+static LocalDateTime now(Clock clock)
+static LocalDateTime now(ZoneId zone)
+static LocalDateTime of(LocalDate date, LocalTime time)
+static LocalDateTime of(int year, Month month, int dayOfMonth, int hour, int minute)
+static LocalDateTime of(int year, int month, int dayOfMonth, int hour, int minute)
+static LocalDateTime of(int year, Month month, int dayOfMonth, int hour, int minute, int second)
+static LocalDateTime of(int year, int month, int dayOfMonth, int hour, int minute, int second)
+static LocalDateTime of(int year, Month month, int dayOfMonth, int hour, int minute, int second, int nanoOfSecond)
+static LocalDateTime of(int year, int month, int dayOfMonth, int hour, int minute, int second, int nanoOfSecond)
+static LocalDateTime parse(CharSequence text)
+static LocalDateTime parse(CharSequence text, DateTimeFormatter formatter)
+...
+}
+
+class LocalDate {
+public int getYear()
+...
+}
+
+class LocalTime {
+public int getHour()
+...
+}</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Month.html"><em>java.time.Month</em></a></strong></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>JANUARY
+...
+int	maxLength()</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/DayOfWeek.html"><em>java.time.DayOfWeek</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Period.html"><em>java.time.Period</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html"><em>java.time.Duration</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html"><em>java.time.ZoneId</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html"><em>java.time.ZonedDateTime</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html"><em>java.time.format.DateTimeFormatter</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html"><em>java.time.temporal.ChronoUnit</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjusters.html"><em>java.time.temporal.TemporalAdjusters</em></a></strong></p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in ust4_how/ust6_modular/ust6_api_j2ee.adoc - include::../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a6_packages/a3_localDateTime/App.java[]</code></pre>
+</div>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -12645,7 +12917,7 @@ public TreeMap(SortedMap&lt;K,? extends V&gt; m)</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-11-02 19:13:42 UTC
+Last updated 2023-11-12 05:07:27 UTC
 </div>
 </div>
 </body>
