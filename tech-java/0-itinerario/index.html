@@ -487,6 +487,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#beneficios-de-la-herencia">Beneficios de la Herencia</a></li>
 <li><a href="#polimorfismo">Polimorfismo</a></li>
 <li><a href="#conversión-de-tipos-2">Conversión de Tipos</a></li>
+<li><a href="#herencia-y-enumerados">Herencia y Enumerados</a></li>
 </ul>
 </li>
 <li><a href="#programación-modular">Programación Modular</a>
@@ -9295,6 +9296,66 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="herencia-y-enumerados">Herencia y Enumerados</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em class="red">Sin enumerados</em></th>
+<th class="tableblock halign-left valign-top"><em class="green">Con enumerados</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in ust4_how/ust5_object_oriented/ust9_enums/ust0_index.adoc - include::../../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a4_orientadoObjetos/a6_enums/a1_inherits/App.java[]</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in ust4_how/ust5_object_oriented/ust9_enums/ust0_index.adoc - include::../../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a4_orientadoObjetos/a6_enums/a2_enums/App.java[]</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Language - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a3_date/a3_enums/Language.java"><em>sin herencia</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a3_date/a4_inherits/Language.java">con herencia</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Month - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a3_date/a4_inherits/Month.java"><em>sin herencia</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a3_date/a3_enums/Month.java">con herencia</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -9399,8 +9460,8 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 <h3 id="jerarquía-de-paquetes">Jerarquía de Paquetes</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -9618,8 +9679,8 @@ class CMover {
 <h3 id="importación-de-clasificadores">Importación de Clasificadores</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 55%;">
-<col style="width: 45%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -9654,8 +9715,8 @@ class CMover {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 65%;">
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
 <thead>
 <tr>
@@ -9665,7 +9726,7 @@ class CMover {
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p><strong class="blue">Importación explícita</strong>: para <span class="blue">acceder a una clase con visibilidad pública declarada en un paquete desde una clase de otro paquete</span>, debe usarse la <strong class="blue">sentencia de importación <em>import</em></strong> de un único tipo, <span class="blue">especificando el nombre completamente calificado de la clase</span> a la que se desea acceder</p>
@@ -9678,20 +9739,12 @@ class CMover {
 </div>
 </li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+</div>
+<div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">package &lt;paqueteX&gt;.&lt;paqueteY&gt;. ... .&lt;paqueteZ&gt;;
-
-import &lt;paquete&gt;.&lt;Clasificador&gt;;
-
-class &lt;Clase&gt; {
-  ...
-}</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">import &lt;paquete1&gt;. ... &lt;paqueteN&gt;.&lt;Clasificador&gt;;</code></pre>
 </div>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">package pooa.ter.controladores;
@@ -10311,7 +10364,8 @@ Matcher matcher(String text)</pre>
 <pre>boolean find()
 String group()
 int start()
-int end()</pre>
+int end()
+String replaceAll(String text)</pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
@@ -12947,7 +13001,7 @@ public TreeMap(SortedMap&lt;K,? extends V&gt; m)</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-11-13 02:09:24 UTC
+Last updated 2023-11-13 15:51:55 UTC
 </div>
 </div>
 </body>
