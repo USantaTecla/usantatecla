@@ -6635,15 +6635,22 @@ static {
 <ol>
 <li>
 <p>método del que parte la ejecución, presente en las clases "principales"</p>
-<div class="ulist">
+</li>
+</ol>
+</div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in ust4_how/ust4_object_based/ust5_static.adoc - include::../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a3_basadaObjetos/a4_main/Clazz.java[]</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p><strong class="blue">Ejecución</strong></p>
 </li>
 </ul>
-</div>
-</li>
-</ol>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -6656,11 +6663,6 @@ static {
 <p><em>args[0].equals("param1") &amp;&amp; args[1].equals("param2")</em></p>
 </li>
 </ol>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Unresolved directive in ust4_how/ust4_object_based/ust5_static.adoc - include::../../../../../../src/src/main/java/es/usantatecla/a0_itinerario/a3_basadaObjetos/a4_main/Clazz.java[]</code></pre>
-</div>
 </div></div></td>
 </tr>
 </tbody>
@@ -9408,7 +9410,7 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="5"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top" rowspan="4"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>Permite agrupar un <span class="blue">conjunto de clases, interfaces y enumerados, junto con archivos de recursos</span> (como textos, imágenes, sonidos, &#8230;&#8203;) en paquetes</p>
@@ -9427,17 +9429,16 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </div>
 </li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+</div>
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">  &lt;paquete1&gt;.&lt;paquete2&gt;. ... .&lt;paqueteN&gt;</code></pre>
 </div>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">  pooa.util.pooa.ter.modelos</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">  pooa.util
+  pooa.ter.modelos</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -10274,8 +10275,8 @@ void setSeed(long seed)<b class="conum">(2)</b></pre>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 40%;">
+<col style="width: 60%;">
 </colgroup>
 <thead>
 <tr>
@@ -10285,9 +10286,32 @@ void setSeed(long seed)<b class="conum">(2)</b></pre>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html"><em>java.util.regex.Pattern</em></a></strong></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java"></code></pre>
+<pre>static Pattern compile(String expReg)
+Matcher matcher(String text)</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/6/docs/api/java/util/regex/Matcher.html"><em>java.util.regex.Matcher</em></a></strong></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>boolean find()
+String group()
+int start()
+int end()</pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
@@ -12923,7 +12947,7 @@ public TreeMap(SortedMap&lt;K,? extends V&gt; m)</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-11-12 05:11:10 UTC
+Last updated 2023-11-13 02:05:39 UTC
 </div>
 </div>
 </body>
